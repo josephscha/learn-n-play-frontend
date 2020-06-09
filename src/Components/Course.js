@@ -44,7 +44,6 @@ class Course extends Component {
         return(
         <div>
             {this.props.title}
-            <Link to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
             <button onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
         </div>
         )
