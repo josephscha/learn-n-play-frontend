@@ -12,11 +12,12 @@ class Login extends Component {
     handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
     renderLogin = () => {
-        const { username } = this.state;
+        const { username, password } = this.state;
         return (
             <form>
                 <h1 style={{fontSize:"50px"}}>Login</h1>
                 <input name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
+                <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
                 <button type="submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
             </form>
         )
@@ -28,10 +29,10 @@ class Login extends Component {
             <form>
                 <h1 style={{fontSize:"50px"}}>Sign Up</h1>
                 <input name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
-                <input name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
+                <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
                 <input name="email" placeholder="Email" value={email} onChange={this.handleChange}/>
                 <input name="childName" placeholder="Child's Name" value={childName} onChange={this.handleChange}/>
-                <button onClick={() => this.createUser(username, password, email, childName)}>Submit</button>
+                <button onClick={(e) => this.createUser(e)}>Submit</button>
             </form> 
         )
     }
@@ -39,7 +40,6 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
        let user = this.props.users.find(user => user.username.toLowerCase() === this.state.username.toLowerCase())
-       console.log("user object", user)
        if (user) {
         this.props.setCurrentUser(user)
         this.props.history.push('/welcome')
@@ -51,29 +51,36 @@ class Login extends Component {
            }   
     }
 
-    createUser = (username,password,email,childName) => {
-        let newUser = {username: username,  password_digest: password, email: email, child_name: childName, score: 0}
+    createUser = (e) => {
+        e.preventDefault()
+        const newUser = {username: this.state.username,  password_digest: this.state.password, email: this.state.email, child_name: this.state.childName, score: 0}
+        
         fetch(`http://localhost:3000/users`, {
             method: 'POST',
             headers: {
-                'accept': 'application/json',
+                accept: 'application/json',
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newUser)
-            })
-            .then(response => response.json())
-            .then(user => 
-               this.props.setCurrentUser(user))
-               this.props.history.push('/welcome')
+            }).then(resp => resp.json()).then(json => this.props.setCurrentUser(json))
     }
 
     render() {
-        console.log(this.state)
         let { isNewUser} = this.state
         return (
              <div>
-                <h1 >[Icon here] Learn N' Play</h1>
-                { isNewUser ? this.renderSignup() : this.renderLogin() }
+                <h1 className="title">[Icon here] Learn N' Play</h1>
+                { isNewUser ? 
+                <div className="container acenter">
+                {this.renderSignup()} 
+                <button onClick={() => this.setState({isNewUser: false})}>Back to Login</button>
+                </div>
+                : 
+                <div className="container acenter">
+                {this.renderLogin() }
+                <button onClick={() => this.setState({isNewUser: true})}>Click here to SignUp</button>
+                </div>
+                }
             </div>
         );
     }

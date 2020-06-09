@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Welcome extends Component {
     render() {
         return(
-            <div>
-                <p>Welcome back</p>
-                <p>{this.props.currentUser.username}</p>
-                Navigation icons. 
-                1 - MyCourses show page
-                2 - GetCourses show page
-            </div>
+            <>
+                <div className="container acenter">
+                    <p>Welcome back</p>
+                    <p>{this.props.currentUser.child_name}</p>
+                </div>
+                <Link to="/mycourses"><img className="image500 greendino" src="./navigation/greendino.png" alt="greendino"/></Link>
+                <Link to="/getcourses"><img className="image500 bluedino" src="./navigation/bluedino.png" alt="bluedino"/></Link>
+            </>
         )
     }
 }

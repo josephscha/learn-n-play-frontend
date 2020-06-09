@@ -1,0 +1,85 @@
+import React, { Component } from 'react';
+import { Redirect  } from 'react-router-dom';
+import Answer from './Answer'
+import Question from './Question'
+import Solution from './Solution'
+
+class CourseStart extends Component {
+
+state = {
+    questions: [],
+    startIndex: 0,
+    finished: false,
+    status: "NA",
+    type: ""
+}
+
+componentDidMount(){
+    this.getQuestions()
+}
+// I have course_id's currently. Need to use course_id to go into course_problems & get all the course_problem objects that 
+// have the course_id. Than with each id, go to corresponding course_problems and pull out those questions
+getQuestions = () => {
+    fetch("http://localhost:3000/course_problems")
+    .then(resp => resp.json())
+    .then(json => {
+       let questionIds = json.filter(question => question.course_id === this.props.location.courseId.id);
+       return questionIds
+    }).then(questionIds => {
+        questionIds.forEach(questionId => 
+            {if (questionId.problemable_type === "MathProblem"){
+                fetch("http://localhost:3000/math_problems")
+                .then(resp => resp.json())
+                .then(json => this.setState({questions: this.state.questions.concat(json.find(json => json.id === questionId.problemable_id)), type: questionId.problemable_type}))
+            }if (questionId.problemable_type === "ReadingProblem"){
+                fetch("http://localhost:3000/reading_problems")
+                .then(resp => resp.json())
+                .then(json => this.setState({questions: this.state.questions.concat(json.find(json => json.id === questionId.problemable_id)), type: questionId.problemable_type}))
+            }if (questionId.problemable_type === "SpellingProblem"){
+                fetch("http://localhost:3000/spelling_problems")
+                .then(resp => resp.json())
+                .then(json => this.setState({questions: this.state.questions.concat(json.find(json => json.id === questionId.problemable_id)), type: questionId.problemable_type}))
+            }
+        })
+    })
+}
+
+nextQuestion = () => {
+    let newIndex = this.state.startIndex + 1;
+    if(newIndex >= this.state.questions.length) {
+      newIndex = 0; 
+      this.setState({finished: true})
+    }
+    this.setState({startIndex: newIndex, status:"NA"})
+}
+
+answerHandler = (answer) => {
+    this.setState({status: answer})
+}
+// nextQuestion = () => {
+//     if ((this.state.startIndex + 1) <= this.state.questions.length){
+//     this.setState({startIndex: this.state.startIndex + 1})}
+//     else {
+//         this.setState({finished: true})
+//     }
+// }
+// question, answer, solution components
+    render() {
+        const {startIndex, finished, questions, status, type} = this.state;
+        const {answerHandler, nextQuestion} = this;
+        let currentQuestion = questions.slice(startIndex, startIndex+1);
+        return(
+            <div className="container acenter">
+                {finished ? <Redirect to="/courseend"/> :
+                <div>
+                    <Question type={type} {...currentQuestion[0]}/>
+                    <Answer {...currentQuestion[0]} answerHandler={answerHandler} type={type} status={status} nextQuestion={nextQuestion}/>
+                </div>
+            }
+                {status === "NA" ? null : <Solution status={status}/>}
+            </div>
+        )
+    }
+}
+
+export default CourseStart;

@@ -4,6 +4,7 @@ export { default as CourseEnd } from './CourseEnd';
 export { default as CoursesContainer } from './CoursesContainer';
 export { default as CourseStart } from './CourseStart';
 export { default as GetCourses } from './GetCourses';
+export { default as CourseCreate } from './CourseCreate';
 export { default as Login } from './Login';
 export { default as MyCourses } from './MyCourses';
 export { default as Navbar } from './Navbar';
