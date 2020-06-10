@@ -14,11 +14,15 @@ class Login extends Component {
     renderLogin = () => {
         const { username, password } = this.state;
         return (
-            <form>
-                <h1 style={{fontSize:"50px"}}>Login</h1>
-                <input name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
-                <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
-                <button type="submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
+            <form autoComplete="off" className="login-form">
+                <h1 className="font"style={{fontSize:"50px"}}>Login</h1>
+                <div className="form-control">
+                <input autoComplete="new-off"  name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
+                </div>
+                <div className="form-control">
+                <input autoComplete="new-off"type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
+                </div>
+                <button className="btn" type="submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
             </form>
         )
     }
@@ -26,13 +30,24 @@ class Login extends Component {
     renderSignup = () => {
         const { username,password,email,childName } = this.state;
         return (
-            <form>
-                <h1 style={{fontSize:"50px"}}>Sign Up</h1>
-                <input name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
-                <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
+            <form className="login-form"> 
+              <div className="form-control">
+
+                <h1 className ="font"style={{fontSize:"50px"}}>Sign Up</h1>
+                <input  autoComplete="username" name="username" placeholder=" username" value={username} onChange={this.handleChange}/>
+                </div>
+                <div className="form-control">
+
+                <input autoComplete="off"type="password" name="password" placeholder="password" value={password} onChange={this.handleChange}/>
+
+                </div>
+                <div className="form-control">
                 <input name="email" placeholder="Email" value={email} onChange={this.handleChange}/>
+                </div>
+                <div className="form-control">
                 <input name="childName" placeholder="Child's Name" value={childName} onChange={this.handleChange}/>
-                <button onClick={(e) => this.createUser(e)}>Submit</button>
+                </div>
+                <button className="btn" onClick={(e) => this.createUser(e)}>Submit</button>
             </form> 
         )
     }
@@ -73,12 +88,12 @@ class Login extends Component {
                 { isNewUser ? 
                 <div className="container acenter">
                 {this.renderSignup()} 
-                <button onClick={() => this.setState({isNewUser: false})}>Back to Login</button>
+                <button className="btn2" onClick={() => this.setState({isNewUser: false})}>Back to Login</button>
                 </div>
                 : 
                 <div className="container acenter">
                 {this.renderLogin() }
-                <button onClick={() => this.setState({isNewUser: true})}>Click here to SignUp</button>
+                <button className="btn2" onClick={() => this.setState({isNewUser: true})}>Click here to SignUp</button>
                 </div>
                 }
             </div>

@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
 body {
   overflow: hidden;
-  background-color: #DCD3FF;
+  /* background-color: #28BDF7; */
+  background-color: rgb(51, 190, 186);
+  background-image: url("https://www.transparenttextures.com/patterns/checkered-light-emboss.png");
+  
+    font-family: 'Righteous';
+
 }
+
 
 /* #background {
   position: absolute;
@@ -11,19 +20,24 @@ body {
 } */
 
 .title{
-  text-align: center;
-  background-color: white;
-  border: 2px solid black;
-  width: fit-content;
-  height: fit-content;
-  margin: 4em auto auto auto;
+  /* text-align: center; */
+  /* background-color: white; */
+  /* border: 2px solid black; */
+  /* width: fit-content;
+  height: fit-content; */
+  /* margin: 4em auto auto auto; */
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  left:35%;
+  z-index: 1;
+
+  /* top: 0; left: 0; bottom: 0; right: 0; */
 }
 
 .greendino {
   position: absolute;
   left: 0;
+  bottom:15%;
+
 }
 
 .greendino:hover,.bluedino:hover {
@@ -44,12 +58,14 @@ body {
   margin-top: 50px;
   position: absolute;
   right:0;
+  bottom:11%;
+
 }
 
 .container {
   text-align: center;
-  background-color: white;
-  border: 2px solid black;
+  color: white; 
+  /* border: 2px solid black; */
   width: fit-content;
   height: fit-content;
 }
@@ -58,12 +74,113 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  /* margin-top: 4%; */
+  /* font-family: 'Righteous';font-size: 22px; */
+  ;
+
 }
+.user{
+  position: absolute;
+  color: white; 
+  /* border: 2px solid black; */
+  font-family: 'Righteous';font-size: 38px;
+  margin-left:35%;
+  bottom:40%
+  
+
+}
+.title,.font{
+  font-family:'Titan One',cursive;
+  color:white
+}
+/* .title:before{
+	background:linear-gradient(45deg,#fc5c7d,#6a82fb,#fc5c7d);
+	width:100%;
+	height:100%;
+	display:block;
+	position:absolute;
+	content:"";
+	mix-blend-mode:screen
+	} */
 
 .center {
   align-self: center;
   justify-self: center;
 }
+/* pencil bg in course start */
+.one,.two,.three,.four,.five,.six,.seven{
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  transform: rotate(180deg);
+  /* border-radius: 150px; */
+  z-index: -999;
+}
+.one,.three,.two{
+  top:3.6em;
+}
+.two{
+  left:58em;
+
+}
+.three{
+  left:29.5em;
+  top:3.6em;
+
+
+
+}
+.four,.five,.six,.seven,.twelve{
+  top:43.5em;
+  transform: rotate(360deg);
+
+
+}
+.four{
+  left:60em;
+
+}
+.eight,.nine,.ten,.twelve,.eleven{
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  transform: rotate(90deg);
+  /* border-radius: 150px; */
+  /* z-index: -999; */
+}
+.seven{
+  left:30em;
+
+}
+.eight{
+  left:-12.5em;
+  top:16em
+}
+.nine{
+  top:40em;
+  left:75em;
+  width: 400px;
+  height: 100px;
+  transform:  rotate(266deg)
+}
+.ten{
+  left:72em;
+  top:16.4em;
+  transform:  rotate(266deg)
+
+}
+.eleven{
+  left:-13em;
+  top:46.5em;
+  z-index: -1;
+  
+}
+.twelve{
+  left:76em;
+
+}
+
+
 
 
 .App-header {
@@ -98,6 +215,7 @@ body {
 .image500 {
   max-height: 500px;
   max-width: 500px;
+  margin-top: 10%;
 }
 
 
@@ -106,7 +224,7 @@ body {
     width:auto;
     display:block;
     text-align:center;
-    font-family:Oswald;
+    font-family: 'Righteous';
     line-height:1.2;
 }
 
@@ -116,9 +234,11 @@ body {
     display:block;
     font-size:0;
     text-align:center;
-    color:#000000;
-    background-color: #6699FF;
-    border: 2px solid rgb(82, 127, 216);
+    color:white;
+    background-color: rgb(51, 190, 186);
+    box-shadow: 2px 5px 15px rgb(42, 165, 161);
+    background-image: url("https://www.transparenttextures.com/patterns/checkered-light-emboss.png");
+    /* border: 2px solid #28BDF7; */
     margin:0; 
     padding:0;
     list-style:none;
@@ -153,5 +273,114 @@ body {
 #cssmenu li:hover > span, #cssmenu li:hover > a
 {  
     color:#F6F6F6;
-    background-color:#0000CC;
+    background-color: rgb(42, 165, 161)
+    ;
+
 }
+/* formsssss */
+.form-control {
+  --default-color: currentColor;
+  --invalid-color: #e74c3c;
+  --valid-color: #3498db;
+  --border-bottom-color: currentColor;
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+.form-control::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--valid-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+}
+.form-control:focus-within::after {
+  transform: scaleX(1);
+}
+.form-control input {
+  padding: 8px 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 16px;
+  color: currentColor;
+  background: transparent;
+  border: 2px solid rgb(51, 190, 186);
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.6s;
+}
+/* finishhh */
+.btn2{
+ 
+    position: relative;
+    width: 70%;
+    padding: 6px 0;
+    font-size: 16px;
+    color: white;
+    background: rgb(51, 190, 186);
+    border: 2px solid rgb(51, 190, 186);
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.6s;
+  
+}
+.btn2{
+  position: absolute;
+  margin-top: -20%;
+  margin-left: -34%;
+}
+.btn::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgb(51, 190, 186), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+.btn:hover {
+  box-shadow: 0 0 20px 10px rgb(51, 190, 186);
+}
+.btn:hover::before {
+  transform: translateX(100%);
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+.login-form h1 {
+  margin: 0 0 24px 0;
+  font-size: 36px;
+}
+.login-form .form-control {
+  margin: 18px 0;
+}
+.login-form .btn {
+  width: 100%;
+  margin: 18px 0 9px 0;
+}
+

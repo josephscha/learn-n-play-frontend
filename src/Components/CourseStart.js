@@ -65,10 +65,23 @@ answerHandler = (answer) => {
 // }
 // question, answer, solution components
     render() {
+        let pencils=require("../images/pencils.png")
+        let div=[
+            'one','two','three','four','five','six','seven','eight','nine','ten',"eleven",
+        ]
+
         const {startIndex, finished, questions, status, type} = this.state;
         const {answerHandler, nextQuestion} = this;
         let currentQuestion = questions.slice(startIndex, startIndex+1);
         return(
+            <div>  
+                 {/*pencil bg  */}
+                 {div.map(function(name, index){
+                        return  <img  className={name}src={pencils}/>
+                        ;
+                      })}
+               
+
             <div className="container acenter">
                 {finished ? <Redirect to="/courseend"/> :
                 <div>
@@ -77,6 +90,7 @@ answerHandler = (answer) => {
                 </div>
             }
                 {status === "NA" ? null : <Solution status={status}/>}
+            </div>
             </div>
         )
     }
