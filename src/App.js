@@ -3,7 +3,7 @@ import './App.css';
 // import {connect} from 'react-redux'
 // import {fetchCreator} from './Components/reducer'
 import { Route, Switch, Redirect  } from 'react-router-dom';
-import {Navbar, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
+import {Navbar, Help, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
 
 export default class App extends React.Component  {
 
@@ -73,6 +73,7 @@ export default class App extends React.Component  {
            <Route path ="/coursestart" render={(props => <CourseStart {...props} />)}/>
            <Route path ="/courseend" render={(props => <CourseEnd {...props} />)}/>
            <Route path ="/coursecreate" render={(props => <CourseCreate {...props} />)}/>
+           <Route path ="/help" render={(props => <Help {...props} />)}/>
            <Route path ="/" render={(props) => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} users={users}/> }/>
          </Switch>
       </div>

@@ -68,7 +68,7 @@ checkAnswer = (event) => {
         return (
             <>
             {type === "ReadingProblem" ? 
-                <div className="container">
+                <div>
                     <button onClick={handleTimer}>START 3 SECOND TIMER</button>
                     <h1>Timer: {count}</h1>
                     <h3>Text comes out under here</h3>
@@ -76,11 +76,14 @@ checkAnswer = (event) => {
                     {status === "CORRECT" ? <button onClick={handleClick}>Next Question</button> : null}
                 </div>
             :
-                <div className="container">
+                <div>
                     <form>
+                    <div className="form-control">
                     <input type="text" value={input} placeholder="Type your answer here" onChange={(event) => handleChange(event)}/>
-                    <button type="submit" onClick={event => checkAnswer(event)}>Check answer!</button>
+                    </div>
+                    <button className="button1" type="submit" onClick={event => checkAnswer(event)}>Check answer!</button>
                     </form>
+                    <br></br>
                     {status === "CORRECT" ? <button onClick={handleClick}>Next Question</button> : null}
                 </div>
             }

@@ -82,7 +82,7 @@ answerHandler = (answer) => {
                       })}
                
 
-            <div className="container acenter">
+            <div className="questioncontainer acenter">
                 {finished ? <Redirect to="/courseend"/> :
                 <div>
                     <Question type={type} {...currentQuestion[0]}/>

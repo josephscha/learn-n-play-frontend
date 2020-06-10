@@ -30,7 +30,7 @@ class Login extends Component {
     renderSignup = () => {
         const { username,password,email,childName } = this.state;
         return (
-            <form className="login-form"> 
+            <form className="signup-form"> 
               <div className="form-control">
 
                 <h1 className ="font"style={{fontSize:"50px"}}>Sign Up</h1>
@@ -80,11 +80,20 @@ class Login extends Component {
             }).then(resp => resp.json()).then(json => this.props.setCurrentUser(json))
     }
 
+    changeImage1 = () => {
+        const images = ["./navigation/elephant.png", "./navigation/seaotter.png","./navigation/robot.png", "./navigation/piggy.png","./navigation/tiger.png",]
+            document.querySelector("#loginimg1").src = images[Math.floor(Math.random() * images.length)];
+    }
+    changeImage2 = () => {
+        const images = ["./navigation/elephant.png", "./navigation/seaotter.png","./navigation/robot.png", "./navigation/piggy.png","./navigation/tiger.png",]
+            document.querySelector("#loginimg2").src = images[Math.floor(Math.random() * images.length)];
+    }
+
     render() {
         let { isNewUser} = this.state
         return (
-             <div>
-                <h1 className="title">[Icon here] Learn N' Play</h1>
+             <div className="loginpage">
+                <h1 className="title">Learn N' Play</h1>
                 { isNewUser ? 
                 <div className="container acenter">
                 {this.renderSignup()} 
@@ -100,6 +109,8 @@ class Login extends Component {
 
                 </div>
                 }
+                <img src="./navigation/seaotter.png" id="loginimg1" onClick={this.changeImage1}/>
+                <img src="./navigation/elephant.png" id="loginimg2" onClick={this.changeImage2}/>
             </div>
         );
     }

@@ -4,7 +4,7 @@ const Solution = props => {
     
     console.log("Solution component" , props)
     return (
-        <div className="container">
+        <div>
             {props.status === "CORRECT" ? 
             <h1>CORRECT!</h1>
             : 

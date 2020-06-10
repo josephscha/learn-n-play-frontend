@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GetCoursesContainer from './GetCoursesContainer';
 import CoursesContainer from './CoursesContainer'
+import { Link } from 'react-router-dom';
 
 class GetCourses extends Component {
 
@@ -88,6 +89,7 @@ searchHandler = (event) => {
             <center>
                 <h1>Please confirm your password</h1>
                 {this.renderConfirmPage()}
+                <Link to="/mycourses"><img className="image500 greendino" src="./navigation/greendino.png" alt="greendino"/></Link>
                 </center>
             
         )

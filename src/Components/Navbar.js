@@ -11,6 +11,7 @@ const Nav = props => {
             <li><Link to="/mycourses">My Courses</Link></li>
             <li><Link to="/getcourses">Get Courses</Link> </li>
             <li><Link to="/coursecreate">Create a Course</Link></li>
+            <li><Link to="/help">Help</Link></li>
             <li><Link to="/" onClick={() => props.setCurrentUser(null)}>Logout</Link> </li>
             </ul>
         </div>

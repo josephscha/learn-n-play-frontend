@@ -5,7 +5,7 @@ class Course extends Component {
 
     addCourse = () => {
         const NewUserCourse = {user_id: this.props.currentUser.id, course_id: this.props.id};
-        (this.props.userCourses.find(userCourse => this.props.id === userCourse.course_id))
+        (this.props.userCourses.find(userCourse => this.props.id === userCourse.course_id && this.props.currentUser.id === userCourse.user_id))
         ?
         alert("You already have this course")
         :
@@ -20,7 +20,7 @@ class Course extends Component {
     }
 
     removeCourse = (course_id) => {
-        const id = this.props.userCourses.find(userCourse => userCourse.course_id === course_id).id
+        const id = this.props.userCourses.find(userCourse => userCourse.course_id === course_id && userCourse.user_id === this.props.currentUser.id).id
         fetch("http://localhost:3000/user_courses/"+id, {
             method: 'DELETE',
             headers: {

@@ -4,8 +4,9 @@
 body {
   overflow: hidden;
   /* background-color: #28BDF7; */
+  display: table;
   background-color: rgb(51, 190, 186);
-  background-image: url("https://www.transparenttextures.com/patterns/checkered-light-emboss.png");
+  background-image: url("http://www.transparenttextures.com/patterns/diagmonds-light.png");
   
     font-family: 'Righteous';
 
@@ -27,9 +28,10 @@ body {
   height: fit-content; */
   /* margin: 4em auto auto auto; */
   position: absolute;
-  left:35%;
+  left: 32%;
   z-index: 1;
-
+  font-size: 80px;
+  animation: bounce 3.0s infinite;
   /* top: 0; left: 0; bottom: 0; right: 0; */
 }
 
@@ -54,6 +56,10 @@ body {
   }
 }
 
+h1.question {
+  font-family: 'Righteous';font-size: 50px;
+}
+
 .bluedino {
   margin-top: 50px;
   position: absolute;
@@ -65,10 +71,41 @@ body {
 .container {
   position: relative;
   text-align: center;
+  align-content: center;
+  justify-content: center;
   color: white; 
   /* border: 2px solid black; */
   width: fit-content;
   height: fit-content;
+}
+
+.container2 {
+  position: relative;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  color: white; 
+  /* border: 2px solid black; */
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(51, 162, 190, .5);
+  padding: 40px;
+}
+
+.questioncontainer {
+  position: relative;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  color: white; 
+  /* border: 2px solid black; */
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.192);
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  border-radius: 25px;
 }
 
 .acenter {
@@ -208,6 +245,34 @@ body {
   }
 }
 
+
+#loginimg1 {
+  position: fixed;
+  height: 350px;
+  width: auto;
+  margin-top: 18em;
+  margin-left: 4em;
+  animation: bounce2 2.0s infinite;
+}
+
+#loginimg2{
+  position: fixed;
+  height: 350px;
+  width: auto;
+  right: 4em;
+  margin-top: 18em;
+  animation: bounce2 2.0s infinite;
+}
+
+@keyframes bounce2 {
+  0%,  
+  100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-30px);
+  }
+}
 .image200 {
   max-height: 200px;
   max-width: 200px;
@@ -223,7 +288,7 @@ body {
 #navbar
 {
     position: sticky;
-    width:auto;
+    width:100%;
     display:block;
     text-align:center;
     font-family: 'Righteous';
@@ -264,7 +329,7 @@ body {
     font-size:22px;
     color:inherit;
     text-decoration:none;
-    padding:14px 40px; 
+    padding:14px 39px; 
     font-weight:400;
     text-transform:uppercase;
     letter-spacing:2px;   
@@ -279,6 +344,31 @@ body {
     ;
 
 }
+.button1 {
+  margin-top: 10px;
+  background: #3DEEF6;
+  background-image: linear-gradient(to bottom, #3DEEF6, #1E9CD0);
+  border-radius: 25px;
+  color: white;
+  font-family: 'Righteous';
+  font-size: 25px;
+  font-weight: 100;
+  padding: 6px;
+  border: solid #FFFFFF 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button1:hover {
+  border: solid #337FED 1px;
+  background: #1E9CD0;
+  background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
+  border-radius: 20px;
+  text-decoration: none; 
+  }
+
 /* formsssss */
 .form-control {
   --default-color: currentColor;
@@ -368,7 +458,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 40px;
+  padding: 70px 50px;
   color: white;
   background: rgba(0, 0, 0, 0.151);
   border-radius: 10px;
@@ -382,6 +472,28 @@ body {
   margin: 18px 0;
 }
 .login-form .btn {
+  width: 100%;
+  margin: 18px 0 9px 0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:10px 50px 80px 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+.signup-form h1 {
+  margin: 0 0 24px 0;
+  font-size: 36px;
+}
+.signup-form .form-control {
+  margin: 18px 0;
+}
+.signup-form .btn {
   width: 100%;
   margin: 18px 0 9px 0;
 }
