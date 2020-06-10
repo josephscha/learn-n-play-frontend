@@ -6,7 +6,7 @@ class Welcome extends Component {
         return(
             <>
                 <div className="user">
-                    <p className="font"><span>Welcome back {this.props.currentUser.child_name}</span></p>
+                    <p className="font" style={{fontSize:"40px"}}><span>Welcome back {this.props.currentUser.child_name}</span></p>
                     <p></p>
                 </div>
                 <Link to="/mycourses"><img className="image500 greendino" src="./navigation/greendino.png" alt="greendino"/></Link>

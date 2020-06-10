@@ -56,6 +56,8 @@ nextQuestion = () => {
 answerHandler = (answer) => {
     this.setState({status: answer})
 }
+
+
 // nextQuestion = () => {
 //     if ((this.state.startIndex + 1) <= this.state.questions.length){
 //     this.setState({startIndex: this.state.startIndex + 1})}
@@ -83,7 +85,11 @@ answerHandler = (answer) => {
                
 
             <div className="questioncontainer acenter">
-                {finished ? <Redirect to="/courseend"/> :
+                {finished ? <Redirect to={{
+                                        pathname: "/courseend",
+                                        state: { courseId: this.props.location.courseId}
+                                        }}
+                                /> :
                 <div>
                     <Question type={type} {...currentQuestion[0]}/>
                     <Answer {...currentQuestion[0]} answerHandler={answerHandler} type={type} status={status} nextQuestion={nextQuestion}/>

@@ -70,8 +70,8 @@ export default class App extends React.Component  {
            <Route path ="/mycourses" render={(props) => <MyCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/getcourses" render={(props) => <GetCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/welcome" render={(props) => <Welcome {...props} currentUser={currentUser}/> }/>
-           <Route path ="/coursestart" render={(props => <CourseStart {...props} />)}/>
-           <Route path ="/courseend" render={(props => <CourseEnd {...props} />)}/>
+           <Route path ="/coursestart" render={(props => <CourseStart {...props} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
+           <Route path ="/courseend" render={(props => <CourseEnd {...props} courses={courses} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
            <Route path ="/coursecreate" render={(props => <CourseCreate {...props} />)}/>
            <Route path ="/help" render={(props => <Help {...props} />)}/>
            <Route path ="/" render={(props) => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} users={users}/> }/>

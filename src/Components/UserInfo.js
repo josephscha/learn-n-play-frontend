@@ -6,7 +6,7 @@ const UserInfo = props => {
     const {username, email, child_name, score} = props
     return (
         <div className="container acenter">
-            <ul>
+            <ul style={{fontSize:"30px"}}>
                 <p>Username: {username}</p>
                 <p>Email: {email}</p>
                 <p>Child's Name: {child_name}</p>

@@ -11,3 +11,27 @@ class CourseCreate extends Component {
 }
 
 export default CourseCreate;
+
+/*
+Active storage +
+create a course form 
+-1st level - Create course - title-string, difficulty- string;dropdown(easy/medium/hard), 
+description-string, points: integer
+-Click confirm, brings up question form & sends post to courses. 
+
+- question form top level - drop down select; reading problem/ spelling problem/ math problem
+opens 2nd level form depending on type of problem
+math problem - problem / answer
+reading problem - problem / answer / image file
+spelling problem - problem / answer / image file
+button - sends post to right problem url & sends post to course_problems.
+
+-some display on the side with course title on top, and a list of problem/problems underneath 
+to show which has been added. 
+
+EXTRA - 
+1. Possibly a remove button that sends delete request to course_problems to remove a problem from a course. 
+2. Dropdown with problems in that genre that are currently available to add (2nd level question form)
+if nothing selected, than it'll render out the form. If something is selected, it'll close out the form 
+and reset values to nothing. 
+*/
