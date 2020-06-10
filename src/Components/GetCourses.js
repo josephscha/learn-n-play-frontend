@@ -10,7 +10,7 @@ state = {
     input: "",
     confirm: false,
     password_check: "",
-    password_digest: this.props.currentUser.password_digest 
+    password_digest: this.props.currentUser.password_digest
 }
 
 componentDidMount(){
@@ -27,12 +27,13 @@ renderConfirmPage = () => {
         return (
             <form onChange={this.changeHandler}>
                 <input type="password" name="password_check" value={this.state.password_check} placeholder="Confirm password"/>
-                <button onClick={this.clickConfirm}>Confirm</button>
+                <button onClick={event => this.clickConfirm(event)}>Confirm</button>
             </form>
         )
 }
 
-clickConfirm = () => {
+clickConfirm = (event) => {
+    event.preventDefault()
     this.state.password_check === this.state.password_digest ? 
     this.setState({confirm: true}) 
     : 

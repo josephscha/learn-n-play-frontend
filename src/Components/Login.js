@@ -88,12 +88,16 @@ class Login extends Component {
                 { isNewUser ? 
                 <div className="container acenter">
                 {this.renderSignup()} 
+
                 <button className="btn2" onClick={() => this.setState({isNewUser: false})}>Back to Login</button>
+
                 </div>
                 : 
                 <div className="container acenter">
                 {this.renderLogin() }
+
                 <button className="btn2" onClick={() => this.setState({isNewUser: true})}>Click here to SignUp</button>
+
                 </div>
                 }
             </div>

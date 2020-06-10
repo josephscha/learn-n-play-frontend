@@ -24,7 +24,7 @@ class Course extends Component {
         fetch("http://localhost:3000/user_courses/"+id, {
             method: 'DELETE',
             headers: {
-                accept: 'application/json',
+                accept: 'application/json', 
                 'content-type': 'application/json'
             },
         }).then(this.props.removeFromMyCourses(course_id))
@@ -44,7 +44,6 @@ class Course extends Component {
         return(
         <div>
             {this.props.title}
-            <Link to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
             <button onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
         </div>
         )

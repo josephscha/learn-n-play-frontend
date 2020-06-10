@@ -66,7 +66,7 @@ export default class App extends React.Component  {
       {this.state.currentUser ? <Navbar setCurrentUser={setCurrentUser}/> : null}
       {this.state.currentUser !== null ? <Redirect to="/welcome"/> : <Redirect to="/"/>}
          <Switch>
-           <Route path ="/profile" render={(props) => <Profile {...props} currentUser={currentUser} courses={courses}/> }/>
+           <Route path ="/profile" render={(props) => <Profile {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/mycourses" render={(props) => <MyCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/getcourses" render={(props) => <GetCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/welcome" render={(props) => <Welcome {...props} currentUser={currentUser}/> }/>
