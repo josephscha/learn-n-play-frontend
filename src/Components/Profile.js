@@ -27,7 +27,21 @@ class Profile extends React.Component {
     }
 
     clickRenderEditForm = () => {
-        this.setState({edit: false})
+        if (this.state.passwordChange !== ""){
+        const newUser = {username: this.state.username, 
+            password_digest: this.state.password_change, 
+            email: this.state.email, 
+            child_name: this.state.child_name}
+        fetch("http://localhost:3000/users/"+this.props.currentUser.id, {
+            method: 'PATCH',
+            headers: {
+                accept: 'application/json',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+            }).then(resp => resp.json()).then(json => this.props.setCurrentUser(json))
+            .then(this.setState({edit: false, password_change: "", password_digest: newUser.password_digest}))}
+            else {this.setState({edit: false, password_change: ""})}
         // fetch patch to backend, and make changes to currentUser as well. 
     }
 

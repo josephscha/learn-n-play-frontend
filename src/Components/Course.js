@@ -24,7 +24,7 @@ class Course extends Component {
         fetch("http://localhost:3000/user_courses/"+id, {
             method: 'DELETE',
             headers: {
-                accept: 'application/json',
+                accept: 'application/json', 
                 'content-type': 'application/json'
             },
         }).then(this.props.removeFromMyCourses(course_id))

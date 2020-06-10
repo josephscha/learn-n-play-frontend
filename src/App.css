@@ -47,6 +47,7 @@ body {
 }
 
 .container {
+  position: relative;
   text-align: center;
   background-color: white;
   border: 2px solid black;
@@ -101,8 +102,9 @@ body {
 }
 
 
-#cssmenu
+#navbar
 {
+    position: sticky;
     width:auto;
     display:block;
     text-align:center;
@@ -110,7 +112,7 @@ body {
     line-height:1.2;
 }
 
-#cssmenu ul
+#navbar ul
 {
     width:auto;
     display:block;
@@ -127,7 +129,7 @@ body {
     border-radius: 3px;
 } 
 
-#cssmenu li
+#navbar li
 {
     display:inline-block;
     position:relative;    
@@ -137,7 +139,7 @@ body {
 }
 
 
-#cssmenu >ul>li>span, #cssmenu >ul>li>a 
+#navbar >ul>li>span, #navbar >ul>li>a 
 {   
     font-size:22px;
     color:inherit;
@@ -150,7 +152,7 @@ body {
     position:relative;
     transition:all 0.3s;
 }
-#cssmenu li:hover > span, #cssmenu li:hover > a
+#navbar li:hover > span, #navbar li:hover > a
 {  
     color:#F6F6F6;
     background-color:#0000CC;

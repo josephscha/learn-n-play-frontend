@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Nav = props => {
     
     return (
-        <div id="cssmenu">
+        <div id="navbar">
             <ul>
             <li><Link to="/welcome">Home</Link></li>
             <li><Link to="/profile">Profile</Link></li>
