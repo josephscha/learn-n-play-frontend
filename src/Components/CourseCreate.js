@@ -1,10 +1,38 @@
 import React, { Component } from 'react';
+import { DirectUpload } from 'activestorage';
 
 class CourseCreate extends Component {
+    state = {
+        course: {},
+        questions: [],
+        problem: {},
+        image: ""
+    }
+    
+    uploadFile = (file, problem) => {
+        const upload = new DirectUpload(file, 'http://localhost:3000/rails/active_storage/direct_uploads')
+    }
+    
+    changeHandler = (event) => {
+        if (event.target.name === "image"){
+            this.setState({
+                [event.target.name]: event.target.files[0]
+            })
+        } else {
+            this.setState({
+                [event.target.name]: event.target.value
+            })
+        }
+    }
+
     render() {
         return(
             <div className="container acenter">
                 <h1>Course Create Component Under Construction</h1>
+                <form>
+                    <label>Upload image file:</label>
+                    <input type="file" name="image" onChange={this.changeHandler}></input>
+                </form>
             </div>
         )
     }
