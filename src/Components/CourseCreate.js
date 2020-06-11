@@ -3,12 +3,18 @@ import { DirectUpload } from 'activestorage';
 
 class CourseCreate extends Component {
     state = {
-        course: {},
-        questions: [],
-        problem: {},
+        courseStatus: false, // when true, it'll render the 2nd layer to the form. 
+        course: {}, // Holds the course object that is returned after it is created via fetch post
+        difficulty: "", // used with title,description and points to create course object
+        title: "",
+        description: "",
+        points: 0,
+        questions: [], // where questions get added to after fetch post to course_problems is made so it's rendered for user to see
+        question: "", // used with answer & image to create problem object via fetch post 
+        answer: "", 
         image: ""
     }
-    
+
     uploadFile = (file, problem) => {
         const upload = new DirectUpload(file, 'http://localhost:3000/rails/active_storage/direct_uploads')
     }
@@ -28,8 +34,16 @@ class CourseCreate extends Component {
     render() {
         return(
             <div className="container acenter">
-                <h1>Course Create Component Under Construction</h1>
+                <div>
+                    <h1> Course Name here</h1>
+                    <ul>
+                        <li> Problem 1</li>
+                        <li> Problem 2</li>
+                    </ul>
+                </div>
                 <form>
+                    <h1>Form for creating course</h1>
+                    <h1>{!this.courseStatus ? "Form level 1" : "Form Level 2"}</h1>
                     <label>Upload image file:</label>
                     <input type="file" name="image" onChange={this.changeHandler}></input>
                 </form>
@@ -41,19 +55,24 @@ class CourseCreate extends Component {
 export default CourseCreate;
 
 /*
-Active storage +
-create a course form 
+1.Active storage + DONE DONE DONE DONE DONE MOTHERFUCKERS DONE FONFEGKJNDLGKJDSGDSLKJGDSLKDGSLKDGSLK WOOOOOOOO
+
+2.FORM LEVEL 1 - CREATE COURSE
 -1st level - Create course - title-string, difficulty- string;dropdown(easy/medium/hard), 
 description-string, points: integer
 -Click confirm, brings up question form & sends post to courses. 
 
-- question form top level - drop down select; reading problem/ spelling problem/ math problem
-opens 2nd level form depending on type of problem
+3.FORM LEVEL 2 - CREATE PROBLEMS
+Problem form LEVEL 1 
+- drop down select; reading problem/ spelling problem/ math problem
+
+4.PROBLEM FORM LEVEL 2 - Opens when problem type is confirmed
 math problem - problem / answer
 reading problem - problem / answer / image file
 spelling problem - problem / answer / image file
 button - sends post to right problem url & sends post to course_problems.
 
+5.SIDE DISPLAY - SHOWS THE COURSE NAME ON TOP, PROBLEMS INSIDE. 
 -some display on the side with course title on top, and a list of problem/problems underneath 
 to show which has been added. 
 
