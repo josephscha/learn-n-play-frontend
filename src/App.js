@@ -3,7 +3,7 @@ import './App.css';
 // import {connect} from 'react-redux'
 // import {fetchCreator} from './Components/reducer'
 import { Route, Switch, Redirect  } from 'react-router-dom';
-import {Navbar, Help, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
+import {Navbar, Reward, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
 
 export default class App extends React.Component  {
 
@@ -59,7 +59,7 @@ export default class App extends React.Component  {
   render() {
     console.log("app state", this.state, "currentUser", this.state.currentUser)
     const {users, currentUser, courses} = this.state;
-    const {setCurrentUser} = this;
+    const {setCurrentUser, fetchCourses} = this;
     return (
       <div>
         {/* <img id="background" src="https://i.ya-webdesign.com/images/green-chalkboard-png-2.png" alt="background img"/> */}
@@ -72,8 +72,8 @@ export default class App extends React.Component  {
            <Route path ="/welcome" render={(props) => <Welcome {...props} currentUser={currentUser}/> }/>
            <Route path ="/coursestart" render={(props => <CourseStart {...props} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
            <Route path ="/courseend" render={(props => <CourseEnd {...props} courses={courses} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
-           <Route path ="/coursecreate" render={(props => <CourseCreate {...props} />)}/>
-           <Route path ="/help" render={(props => <Help {...props} />)}/>
+           <Route path ="/coursecreate" render={(props => <CourseCreate fetchCourses={fetchCourses} {...props} />)}/>
+           <Route path ="/reward" render={(props => <Reward {...props} />)}/>
            <Route path ="/" render={(props) => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} users={users}/> }/>
          </Switch>
       </div>

@@ -23,18 +23,36 @@ class CourseCreate extends Component {
         courseId: 0,
         problemIds: []
     }
-    
+
     uploadFile = (file, problem) => {
         const upload = new DirectUpload(file, 'http://localhost:3000/rails/active_storage/direct_uploads')
-        if (this.state.type === "ReadingProblem"){
-            fetch("http://localhost:3000/reading_problems",)
-        }
-        if (this.state.type === "MathProblem"){
-            fetch("http://localhost:3000/math_problems",)
-        }
-        if (this.state.typ === "SpellingProblem"){
-            fetch("http://localhost:3000/spelling_problems",)
-        }
+        upload.create((error,blob) => {
+            if (error) {
+                console.log(error)
+            } else {
+                if (this.state.type === "ReadingProblem"){
+                    fetch(`http://localhost:3000/reading_problems/${problem.id}`,{
+                        method: 'PUT',
+                        headers: header,
+                        body: JSON.stringify({image: blob.signed_id})
+                    }).then(resp => resp.json()).then(data => console.log(data))
+                }
+                if (this.state.type === "MathProblem"){
+                    fetch(`http://localhost:3000/math_problems/${problem.id}`,{
+                        method: 'PUT',
+                        headers: header,
+                        body: JSON.stringify({image: blob.signed_id})
+                    }).then(resp => resp.json()).then(data => console.log(data))
+                }
+                if (this.state.type === "SpellingProblem"){
+                    fetch(`http://localhost:3000/spelling_problems/${problem.id}`,{
+                        method: 'PUT',
+                        headers: header,
+                        body: JSON.stringify({image: blob.signed_id})
+                    }).then(resp => resp.json()).then(data => console.log(data))
+                }
+            }
+        })
     }
     
     changeHandler = (event) => {
@@ -78,8 +96,11 @@ class CourseCreate extends Component {
                 fetch("http://localhost:3000/reading_problems", {
                     method: 'POST',
                     headers: header,
-                    body: JSON.stringify(question)
-                    }).then(resp => resp.json()).then(data => this.createCourseProblems(id, data.id)))
+                    body: JSON.stringify({problem: question.problem, answer: question.answer})
+                    }).then(resp => resp.json()).then(data => {
+                        this.uploadFile(question.image, data)
+                            this.createCourseProblems(id, data.id)
+                    }).then(this.props.fetchCourses()))
                 }
             if (this.state.type === "MathProblem") {
                 this.state.questions.map(question => 
@@ -87,15 +108,19 @@ class CourseCreate extends Component {
                     method: 'POST',
                     headers: header,
                     body: JSON.stringify(question)
-                    }).then(resp => resp.json()).then(data => this.createCourseProblems(id, data.id)))
+                    }).then(resp => resp.json()).then(data => this.createCourseProblems(id, data.id))
+                    .then(this.props.fetchCourses()))
                 }
             if (this.state.type === "SpellingProblem") {
                 this.state.questions.map(question => 
                 fetch("http://localhost:3000/spelling_problems", {
                     method: 'POST',
                     headers: header,
-                    body: JSON.stringify(question)
-                    }).then(resp => resp.json()).then(data => this.createCourseProblems(id, data.id)))
+                    body: JSON.stringify({problem: question.problem, answer: question.answer})
+                    }).then(resp => resp.json()).then(data => {
+                        this.uploadFile(question.image, data)
+                            this.createCourseProblems(id, data.id)
+                        }).then(this.props.fetchCourses()))
                 }
             }
         )
@@ -139,6 +164,3 @@ class CourseCreate extends Component {
 }
 
 export default CourseCreate;
-
-//TO-DO
-//Work on image upload when creating reading/spelling problem. 
