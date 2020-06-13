@@ -1,17 +1,22 @@
 import React from 'react';
 import CourseFormLevel1 from './CourseFormLevel1'
 import CourseFormLevel2 from './CourseFormLevel2'
-import CourseFormLevel3 from './CourseFormLevel3'
 
-const CourseMasterForm = props => {
+const CourseMasterForm = (props) => {
 
+    const {status, confirmCourse, changeHandler, type, addToQuestions, problem, answer, image, createCourse} = props;
     return (
         <div>
-            Master Form
-            {!props.status ?
-            <CourseFormLevel1 /> //course create form
+            {!status ?
+            <CourseFormLevel1 confirmCourse={confirmCourse} changeHandler={changeHandler}/> //course create form
             :
-            <CourseFormLevel2 />  // select dropdown to select question type/ course type
+            <CourseFormLevel2 addToQuestions={addToQuestions} 
+            type={type} 
+            changeHandler={changeHandler}
+            createCourse={createCourse}
+            problem={problem}
+            answer={answer}
+            image={image}/>  
             }
         </div>
     )
