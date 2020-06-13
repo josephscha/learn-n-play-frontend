@@ -26,6 +26,15 @@ class CourseCreate extends Component {
     
     uploadFile = (file, problem) => {
         const upload = new DirectUpload(file, 'http://localhost:3000/rails/active_storage/direct_uploads')
+        if (this.state.type === "ReadingProblem"){
+            fetch("http://localhost:3000/reading_problems",)
+        }
+        if (this.state.type === "MathProblem"){
+            fetch("http://localhost:3000/math_problems",)
+        }
+        if (this.state.typ === "SpellingProblem"){
+            fetch("http://localhost:3000/spelling_problems",)
+        }
     }
     
     changeHandler = (event) => {
@@ -96,7 +105,7 @@ class CourseCreate extends Component {
         fetch("http://localhost:3000/course_problems", {
         method: 'POST',
         headers: header,
-        body: JSON.stringify({course_id: course_id, problem_id: problem_id})
+        body: JSON.stringify({course_id: course_id, problemable_type: this.state.type, problemable_id: problem_id})
         }).then(resp => resp.json()).then(data => console.log("created course problem", data) )
     }
 
@@ -130,3 +139,6 @@ class CourseCreate extends Component {
 }
 
 export default CourseCreate;
+
+//TO-DO
+//Work on image upload when creating reading/spelling problem. 
