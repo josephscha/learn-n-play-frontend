@@ -15,7 +15,7 @@ const CourseFormLevel2 = props => {
                 problem={problem}
                 answer={answer}
                 /> 
-                <button onClick={createCourse}>FINISHED!</button>
+                <button className="r-btn" onClick={createCourse}>FINISHED!</button>
                 </>
                 : 
                 <>
@@ -27,7 +27,7 @@ const CourseFormLevel2 = props => {
                 image={image}
                 type={type}
                 />
-                <button onClick={createCourse}>FINISHED!</button>
+                <button className="r-btn" onClick={createCourse}>FINISHED!</button>
                 </>}
             </div>
         )

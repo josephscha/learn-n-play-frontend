@@ -9,7 +9,7 @@ const MathForm = props => {
                 <input type="text" name="problem" value={problem}/>
                 <label htmlFor="answer">Description:</label>
                 <input type="text" name="answer" value={answer}/>
-                <input className="r-btn" type="submit" onClick={(event)=> addToQuestions(event)}/>
+                <input type="submit" onClick={(event)=> addToQuestions(event)}/>
             </form> 
         )
 }

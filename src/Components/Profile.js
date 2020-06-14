@@ -52,24 +52,25 @@ class Profile extends React.Component {
 
     renderEditForm  = () => {
         return (
-            <form onChange={event => this.changeHandler(event)}>
+            <form className="group-form" onChange={event => this.changeHandler(event)}>
                 <h1>Edit Form</h1>
                 <input type="text" name="username" defaultValue={this.state.username} />
                 <input type="password" name="password_change" defaultValue={this.state.password_change} placeholder="New password here"/>
                 <input type="text" name="email" defaultValue={this.state.email} />
                 <input type="text" name="child_name" defaultValue={this.state.child_name} />
-                <button onClick={this.clickRenderEditForm}>Confirm</button>
+                <button className="r-btn" onClick={this.clickRenderEditForm}>Confirm</button>
             </form>
         )
     }
 
     renderEditConfirm = () => {
         return (
-            <form onChange={event => this.changeHandler(event)}>
+            <form className="group-form" onChange={event => this.changeHandler(event)}>
                 <h1>Confirm your username & password</h1>
                 <input type="text" name="username" defaultValue={this.state.username} />
                 <input type="password" name="password_change" defaultValue={this.state.password_change} />
-                <button onClick={this.clickConfirm}>Confirm</button>
+                <button className="r-btn" onClick={this.clickConfirm}>Confirm</button>
+                
             </form>
         )
     }
@@ -80,8 +81,9 @@ class Profile extends React.Component {
             <div>
                 <center><h1>Profile page for {this.props.currentUser.username}</h1>
                 <div>
+                    
                     <UserInfo {...this.props.currentUser}/>
-                    {!this.state.editConfirm && !this.state.edit ? <button onClick={this.clickEditConfirm}>Edit Profile</button> : null}
+                    {!this.state.editConfirm && !this.state.edit ? <button className="r-btn" onClick={this.clickEditConfirm}>Edit Profile</button> : null}
                 </div>
                     <div>
                         {this.state.editConfirm ? 

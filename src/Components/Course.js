@@ -32,27 +32,44 @@ class Course extends Component {
 
     renderGetCourse = () => {
         return(
-        <div>
-            {this.props.title}
-            <button onClick={this.addCourse}>Add course to my Courses</button>
+<div className="my-courses-container">
+     <div className="course ">
+		<div className="course-preview my-course">
+             {this.props.title}
         </div>
+           
+          </div>
+            <button className="btn-c"  onClick={this.addCourse}>Add course to my Courses</button>
+        
+          </div>
         )
     }
 
     renderRemoveCourse = () => {
         if (this.props.remove) {
         return(
-        <div>
-            {this.props.title}
-            <button onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
+<div className="remove-courses-container">
+ <div className="course">
+	<div className="course-preview">
+             {this.props.title}
         </div>
+        </div>
+           
+            <button className="btn-c" onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
+        </div>
+
         )
         }
         else {
             return (
-                <div>
+        <div className="courses-container">
+         <div className="course">
+		<div className="course-preview">
                     {this.props.title}
-                    <Link to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
+            </div>        
+                    <Link className="link" to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
+                
+                </div>
                 </div>
                 )
         }

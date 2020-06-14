@@ -144,6 +144,7 @@ h1.question {
 .center {
   align-self: center;
   justify-self: center;
+  
 }
 /* pencil bg in course start */
 .one,.two,.three,.four,.five,.six,.seven{
@@ -293,6 +294,7 @@ h1.question {
     text-align:center;
     font-family: 'Righteous';
     line-height:1.2;
+    z-index: 1;
 }
 
 #navbar ul
@@ -402,6 +404,47 @@ h1.question {
   border: none;
   outline: none;
 }
+.link{
+  position: relative;
+  top:25px;
+  left: 10%;
+}
+.group-form input[type="text"],
+.group-form input[type="number"],
+.group-form input[type="password"],.confirm,.search{
+    width: 250px;
+    height: 40px;
+    border: 1px solid #707070;
+    border-radius: 9999px;
+    padding-left: 15px;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.137);
+}
+/* .group-form{
+  position: relative;
+  top: -5em;
+
+} */
+/* body { position: absolute; } */
+.r-btn.remove{
+  position: relative;
+  left: 30%;
+  top:-2em
+
+}
+
+select{
+  background-color: rgba(0, 0, 0, 0.137);
+  border-radius: 9999px;
+  padding: 12px 25px;
+
+
+}
+.book{
+  position: relative;
+  top: -5em;
+}
 
 .btn {
   position: relative;
@@ -497,4 +540,207 @@ h1.question {
   width: 100%;
   margin: 18px 0 9px 0;
 }
+
+/* course boxes */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+color: white;
+
+}
+
+
+:link {
+  /* text-decoration: none; */
+}
+/* .type{
+  position: relative;
+
+  left: -36%;
+}
+.type-label{
+  position: relative;
+  left: -37%;
+
+} */
+
+
+.course {
+	background-color: rgba(255, 255, 255, 0.164);
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 70%;
+	margin: 20px;
+  /* overflow: auto; */
+	width: 650px;
+}
+
+
+.course-preview.my-course{
+  background-color:  rgb(8, 58, 58);
+
+}
+.course-preview {
+	background-color:  rgb(49, 177, 172);
+	color: #fff;
+	padding: 30px;
+  max-width: 250px;
+  border-radius:5px ;
+}
+.btn-c  {
+	background-color: rgb(49, 177, 172);
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	right: 220px;
+  letter-spacing: 1px;
+  margin-top: -11%;
+}
+.r-btn{
+  position: relative;
+  background-color: rgb(49, 177, 172);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+  padding: 12px 25px;
+  border: 0;
+top:10px;
+  border-radius: 50px;
+
+
+}
+/* correct or wrong character */
+.right{
+opacity: 0;
+  position: absolute;
+  left:25em;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+  
+}
+.wrong{
+opacity: 0;
+  position: absolute;
+
+ left:-9em;
+  top:-3em;
+  transform: rotate(-70deg);
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.profile{
+  position: relative;
+  border:solid transparent;
+  width: 30%;
+  height: auto;
+  color: white;
+  border-radius: 10%;
+  background: rgba(0, 0, 0, 0.329);
+  
+}
+.kid{
+  position: relative;
+  border: solid grey;
+  border-radius: 70%;
+  width: 50%;
+  margin-top:10px;
+  background-color:rgba(255, 255, 255, 0.719)
+
+}
+.kid-pic{
+  position: relative;
+ top:38px;
+ transform: rotate(-6deg);
+
+}
+.scroll{
+  /* border: solid white; */
+  position: relative;
+  width: 1400px;
+  height: 700px;
+  overflow: scroll;
+  top:3em 
+
+}
+/* my courses */
+/* .scroll1{
+  position: absolute;
+  top:90px
+
+
+} */
+/*  */
+/* .first{
+  position: absolute;
+  left:-24em
+} */
+/* available */
+/* .scroll2{
+  position: absolute;
+  max-width: 80%;
+  left: 1%;
+  top: 7em;
+
+} */
+
+/* .my-c{
+  position: relative;
+  left:5em;
+  top:1.5em
+} */
+.search{
+  position: fixed;
+   bottom:30em;
+  left:1% ;
+  
+
+}
+.next{
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  background-color: transparent;
+  border-bottom-color: white;
+}
+/* .a-c{
+  position: relative;
+  left:-6em;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
