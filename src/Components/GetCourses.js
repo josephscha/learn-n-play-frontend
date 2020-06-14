@@ -26,9 +26,9 @@ changeHandler = (event) => {
 
 renderConfirmPage = () => {
         return (
-            <form onChange={this.changeHandler}>
-                <input type="password" name="password_check" value={this.state.password_check} placeholder="Confirm password"/>
-                <button onClick={event => this.clickConfirm(event)}>Confirm</button>
+            <form className="group-form" onChange={this.changeHandler}>
+                <input className="confirm"type="password" name="password_check" value={this.state.password_check} placeholder="Confirm password"/>
+                <button className="r-btn" onClick={event => this.clickConfirm(event)}>Confirm</button>
             </form>
         )
 }
@@ -70,19 +70,21 @@ searchHandler = (event) => {
         // console.log("getCourses", this.state)
         return(
             confirm ? 
-            <div>
+            <div  className="scroll">
                 <center><h1>Get Courses page</h1>
-                <div className="container">
-                    <h1>My Courses</h1>
+                <div className="container ">
+                    <h1 className="my-c">My Courses</h1>
                     <CoursesContainer remove={true} removeFromMyCourses={removeFromMyCourses} userCourses={userCourses} myCourses={myCourses} currentUser={currentUser}/>
                 </div>
+                <div  className="scroll2">
                 <div className="container">
-                    <h1>Available Courses</h1>
+                    <h1 className="a-c">Available Courses</h1>
                     <GetCoursesContainer userCourses={userCourses} myCourses={myCourses} addToMyCourses={addToMyCourses} courses={filteredCourses} currentUser={currentUser}/>
+                </div>
                 </div>
                 </center>
                 <center>
-                    <input type="text" placeholder="Search available courses"value={input} onChange={(event) => searchHandler(event)}/>
+                    <input  className="search"type="text" placeholder="Search available courses"value={input} onChange={(event) => searchHandler(event)}/>
                 </center>
             </div>
             :

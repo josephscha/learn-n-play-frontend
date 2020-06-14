@@ -6,10 +6,10 @@ const MathForm = props => {
         return (
             <form className="group-form" onChange={changeHandler}>
                 <label htmlFor="problem">Problem:</label>
-                <input autoFocus={true} type="text" name="problem" value={problem}/>
+                <input type="text" name="problem" value={problem}/>
                 <label htmlFor="answer">Description:</label>
                 <input type="text" name="answer" value={answer}/>
-                <input className="r-btn" type="submit" onClick={(event)=> addToQuestions(event)}/>
+                <input type="submit" onClick={(event)=> addToQuestions(event)}/>
             </form> 
         )
 }

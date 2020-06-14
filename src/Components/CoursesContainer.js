@@ -7,9 +7,9 @@ class CoursesContainer extends Component {
         const { userCourses, currentUser, removeFromMyCourses, remove} = this.props;
         console.log("user courses", userCourses)
         return(
-            <div>
+            <div className="scroll1 first">
                  {this.props.myCourses.map(course => 
-                 <Course key={course.id} {...course} 
+                 <Course  key={course.id} {...course} 
                  userCourses={userCourses}
                  currentUser={currentUser}
                  removeFromMyCourses={removeFromMyCourses}
