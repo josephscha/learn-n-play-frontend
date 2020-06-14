@@ -14,7 +14,7 @@ class Login extends Component {
     renderLogin = () => {
         const { username, password } = this.state;
         return (
-            <form autoComplete="off" className="login-form">
+            <form  autoComplete="off" className="login-form">
                 <h1 className="font"style={{fontSize:"50px"}}>Login</h1>
                 <div className="form-control">
                 <input autoComplete="new-off"  name="username" placeholder="Username" value={username} onChange={this.handleChange}/>

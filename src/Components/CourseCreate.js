@@ -145,7 +145,7 @@ class CourseCreate extends Component {
                         {questions.map(question => 
                         <>
                         <li> Problem: {question.problem} Answer: {question.answer}</li>
-                        <button onClick={() => removeProblem(question.problem)}>Remove Problem</button>
+                        <button className="r-btn remove" onClick={() => removeProblem(question.problem)}>Remove Problem</button><br/>
                         </>)}
                     </ol>
                 <CourseMasterForm type={type} 
