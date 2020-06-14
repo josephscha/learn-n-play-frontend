@@ -88,8 +88,25 @@ checkAnswer = (event) => {
         if (count <= 0){stopTimer()}
         if (input !== "" && input !== answer && status !== "WRONG")
         {answerHandler("WRONG")}
+        if (input !== "" && input !== answer && status !== "WRONG")//newww
+        document.getElementsByClassName("wrong")[0].style.opacity="1"
+
+        if (input !== "" && input !== answer && status !== "WRONG")//neww
+        document.getElementsByClassName("right")[0].style.opacity="0"
+
+
+
         if (input !== "" && input === answer && status !== "CORRECT")
         {answerHandler("CORRECT")}
+
+        if (input !== "" && input === answer && status !== "CORRECT")//neww
+        document.getElementsByClassName("wrong")[0].style.opacity="0"
+
+
+        if (input !== "" && input === answer && status !== "CORRECT")//newww
+        document.getElementsByClassName("right")[0].style.opacity="1"
+
+
         }
         return (
             <>
