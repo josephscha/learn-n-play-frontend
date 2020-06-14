@@ -7,7 +7,7 @@ const ReadingSpellingForm = props => {
         return (
             <form onChange={changeHandler}>
                 <label htmlFor="problem">Problem:</label>
-                <input type="text" name="problem" value={problem} placeholder={type === "SpellingProblem" ? "Example: a _ _ _ e" : null}/>
+                <input autoFocus={true} type="text" name="problem" value={problem} placeholder={type === "SpellingProblem" ? "Example: a _ _ _ e" : null}/>
                 <label htmlFor="answer">Description:</label>
                 <input type="text" name="answer" value={answer} placeholder={type === "SpellingProblem" ? "Example: apple" : null}/>
                 <label htmlFor="image">Upload image</label>

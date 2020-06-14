@@ -6,7 +6,7 @@ const MathForm = props => {
         return (
             <form onChange={changeHandler}>
                 <label htmlFor="problem">Problem:</label>
-                <input type="text" name="problem" value={problem}/>
+                <input autoFocus={true} type="text" name="problem" value={problem}/>
                 <label htmlFor="answer">Description:</label>
                 <input type="text" name="answer" value={answer}/>
                 <input type="submit" onClick={(event)=> addToQuestions(event)}/>

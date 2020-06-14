@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserInfo = props => {
     
-    console.log("UserInfo component" , props)
+    // console.log("UserInfo component" , props)
     const {username, email, child_name, score} = props
     return (
         <div className="container acenter">

@@ -8,7 +8,7 @@ class CourseFormLevel1 extends React.Component {
                 <h1> Create a Course!</h1>
                 <form onChange={this.props.changeHandler}>
                     <label htmlFor="title">Course Title:</label>
-                    <input type="text" name="title" value={this.props.title}/>
+                    <input autoFocus={true} type="text" name="title" value={this.props.title}/>
                     <label htmlFor="description">Description:</label>
                     <input type="text" name="description" value={this.props.description}/>
                     <label htmlFor="points">Points:</label>

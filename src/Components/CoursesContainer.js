@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Course from './Course'
 
 class CoursesContainer extends Component {
+
     render() {
-        const {userCourses, currentUser, removeFromMyCourses, remove} = this.props;
+        const { userCourses, currentUser, removeFromMyCourses, remove} = this.props;
+        console.log("user courses", userCourses)
         return(
             <div>
                  {this.props.myCourses.map(course => 

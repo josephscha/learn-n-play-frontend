@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import {connect} from 'react-redux'
 // import {fetchCreator} from './Components/reducer'
-import { Route, Switch, Redirect  } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import {Navbar, Reward, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
 
 export default class App extends React.Component  {
@@ -12,6 +12,7 @@ export default class App extends React.Component  {
     users: [],
     courses: []
   }
+
   componentDidMount() {
     // this.props.fetchCourses()
     // this.props.fetchUser("Joseph")
@@ -64,14 +65,13 @@ export default class App extends React.Component  {
       <div>
         {/* <img id="background" src="https://i.ya-webdesign.com/images/green-chalkboard-png-2.png" alt="background img"/> */}
       {this.state.currentUser ? <Navbar setCurrentUser={setCurrentUser}/> : null}
-      {this.state.currentUser !== null ? <Redirect to="/welcome"/> : <Redirect to="/"/>}
          <Switch>
            <Route path ="/profile" render={(props) => <Profile {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/mycourses" render={(props) => <MyCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/getcourses" render={(props) => <GetCourses {...props} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/welcome" render={(props) => <Welcome {...props} currentUser={currentUser}/> }/>
            <Route path ="/coursestart" render={(props => <CourseStart {...props} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
-           <Route path ="/courseend" render={(props => <CourseEnd {...props} courses={courses} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
+           <Route path ="/courseend" render={(props => <CourseEnd fetchCourses={fetchCourses} {...props} courses={courses} currentUser={currentUser} setCurrentUser={setCurrentUser}/>)}/>
            <Route path ="/coursecreate" render={(props => <CourseCreate fetchCourses={fetchCourses} {...props} />)}/>
            <Route path ="/reward" render={(props => <Reward {...props} />)}/>
            <Route path ="/" render={(props) => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} users={users}/> }/>

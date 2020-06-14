@@ -75,7 +75,7 @@ class Profile extends React.Component {
     }
 
     render() {
-        console.log("profile page", this.state)
+        // console.log("profile page", this.state)
         return(
             <div>
                 <center><h1>Profile page for {this.props.currentUser.username}</h1>

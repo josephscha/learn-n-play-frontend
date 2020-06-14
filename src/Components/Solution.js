@@ -2,13 +2,13 @@ import React from 'react';
 
 const Solution = props => {
     
-    console.log("Solution component" , props)
+    // console.log("Solution component" , props)
     return (
         <div>
             {props.status === "CORRECT" ? 
-            <h1>CORRECT!</h1>
+            <center><h2>CORRECT! GOOD JOB!</h2></center>
             : 
-            <h1>WRONG! TRY AGAIN</h1>
+            <center><h2>LETS TRY AGAIN</h2></center>
             }
         </div>
     )

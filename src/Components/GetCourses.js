@@ -38,7 +38,7 @@ clickConfirm = (event) => {
     this.state.password_check === this.state.password_digest ? 
     this.setState({confirm: true}) 
     : 
-    alert("Username & Password combination does not match. Please try again.")
+    alert("Password incorrect. Please try again.")
     this.setState({password_check: ""})
 }
 
@@ -67,7 +67,7 @@ searchHandler = (event) => {
         const {myCourses, userCourses, input, confirm} = this.state;
         const {addToMyCourses, removeFromMyCourses, searchHandler} = this;
         let filteredCourses = courses.filter(course => course.title.toLowerCase().includes(this.state.input.toLowerCase()))
-        console.log("getCourses", this.state)
+        // console.log("getCourses", this.state)
         return(
             confirm ? 
             <div>

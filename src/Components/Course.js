@@ -51,17 +51,22 @@ class Course extends Component {
         else {
             return (
                 <div>
-                    {this.props.title}
+                    {this.props.title}   Status: {this.isCompleted(this.props.id) ? "Completed" : "Not complete"}
                     <Link to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
                 </div>
                 )
         }
     }
 
+    isCompleted = (course_id) => {
+        return this.props.userCourses.find(userCourse => userCourse.course_id === course_id).completed
+    }
+
     render() {
+        // console.log("completed?", this.isCompleted(this.props.id))
         const {getCourse} = this.props
         const {renderGetCourse, renderRemoveCourse} = this;
-        console.log("mycourse", getCourse)
+        // console.log("mycourse", getCourse)
         return(
             getCourse ? 
             renderGetCourse()

@@ -17,7 +17,7 @@ class Login extends Component {
             <form autoComplete="off" className="login-form">
                 <h1 className="font"style={{fontSize:"50px"}}>Login</h1>
                 <div className="form-control">
-                <input autoComplete="new-off"  name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
+                <input autoFocus={true} autoComplete="new-off"  name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
                 </div>
                 <div className="form-control">
                 <input autoComplete="new-off"type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
@@ -34,7 +34,7 @@ class Login extends Component {
               <div className="form-control">
 
                 <h1 className ="font"style={{fontSize:"50px"}}>Sign Up</h1>
-                <input  autoComplete="username" name="username" placeholder=" username" value={username} onChange={this.handleChange}/>
+                <input autoFocus={true} autoComplete="username" name="username" placeholder=" username" value={username} onChange={this.handleChange}/>
                 </div>
                 <div className="form-control">
 
@@ -55,15 +55,22 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
        let user = this.props.users.find(user => user.username.toLowerCase() === this.state.username.toLowerCase())
-       if (user) {
-        this.props.setCurrentUser(user)
-        this.props.history.push('/welcome')
-       } else {
-            alert("Seems like we cant find you, try creating an account")
+       if (user){ 
+            if (user.password_digest === this.state.password) {
+                this.props.setCurrentUser(user)
+                this.props.history.push('/welcome')
+            } else {
+                    alert("Username & password combination could not be found. Please try again")
+                    this.setState({
+                        password: ''})
+                }   
+        } else {
+            alert("Could not find User. Please sign up.")
             this.setState({
                 isNewUser: true,
-                username: ''})
-           }   
+                password: ''
+            })
+        }
     }
 
     createUser = (e) => {

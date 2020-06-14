@@ -498,3 +498,73 @@ h1.question {
   margin: 18px 0 9px 0;
 }
 
+/* course boxes */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+.course {
+	background-color: rgba(255, 255, 255, 0.164);
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 45%;
+	margin: 20px;
+	overflow: hidden;
+	width: 650px;
+}
+
+
+
+.course-preview {
+	background-color:  rgb(49, 177, 172);
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+.btn-c {
+	background-color: rgb(49, 177, 172);
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	right: 30px;
+  letter-spacing: 1px;
+  margin-top: -11%;
+}
+/* correct or wrong character */
+.right{
+opacity: 0;
+  position: absolute;
+  left:25em;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+  
+}
+.wrong{
+opacity: 0;
+  position: absolute;
+
+ left:-9em;
+  top:-3em;
+  transform: rotate(-70deg);
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
