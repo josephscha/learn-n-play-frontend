@@ -32,20 +32,32 @@ class Course extends Component {
 
     renderGetCourse = () => {
         return(
-        <div>
-            {this.props.title}
-            <button onClick={this.addCourse}>Add course to my Courses</button>
+<div class="courses-container">
+                	<div class="course">
+		<div class="course-preview">
+             {this.props.title}
         </div>
+           
+          </div>
+            <button class="btn-c"  onClick={this.addCourse}>Add course to my Courses</button>
+        
+          </div>
         )
     }
 
     renderRemoveCourse = () => {
         if (this.props.remove) {
         return(
-        <div>
-            {this.props.title}
-            <button onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
+<div class="courses-container">
+                      	<div class="course">
+		<div class="course-preview">
+             {this.props.title}
         </div>
+        </div>
+           
+            <button class="btn-c" onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
+        </div>
+
         )
         }
         else {

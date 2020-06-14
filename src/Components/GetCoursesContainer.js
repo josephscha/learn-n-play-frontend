@@ -6,10 +6,14 @@ class GetCoursesContainer extends Component {
         const {currentUser, addToMyCourses, myCourses, userCourses} = this.props;
         return(
             <div>
+                
+
                  {this.props.courses.map(course => 
                  <Course key={course.id} {...course} myCourses={myCourses} userCourses={userCourses}
                  addToMyCourses={addToMyCourses} getCourse={true} currentUser={currentUser}/>)}
-            </div>
+                 
+	{/* </div> */}
+</div>
         )
     }
 }

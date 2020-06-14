@@ -498,3 +498,66 @@ h1.question {
   margin: 18px 0 9px 0;
 }
 
+/* course boxes */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+.course {
+	background-color: rgba(255, 255, 255, 0.164);
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 45%;
+	margin: 20px;
+	overflow: hidden;
+	width: 650px;
+}
+
+
+
+.course-preview {
+	background-color:  rgb(49, 177, 172);
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+.btn-c {
+	background-color: rgb(49, 177, 172);
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	right: 30px;
+  letter-spacing: 1px;
+  margin-top: -11%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
