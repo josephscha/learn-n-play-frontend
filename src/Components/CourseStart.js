@@ -74,7 +74,7 @@ answerHandler = (answer) => {
 
         const {startIndex, finished, questions, status, type} = this.state;
         const {answerHandler, nextQuestion} = this;
-        let currentQuestion = questions.slice(startIndex, startIndex+1);
+        let currentQuestion = questions[startIndex];
         return(
             <div>  
                  {/*pencil bg  */}
@@ -91,8 +91,8 @@ answerHandler = (answer) => {
                                         }}
                                 /> :
                 <div>
-                    <Question type={type} {...currentQuestion[0]}/>
-                    <Answer {...currentQuestion[0]} answerHandler={answerHandler} type={type} status={status} nextQuestion={nextQuestion}/>
+                    <Question type={type} {...currentQuestion}/>
+                    <Answer {...currentQuestion} answerHandler={answerHandler} type={type} status={status} nextQuestion={nextQuestion}/>
                 </div>
             }
                 {status === "NA" ? null : <Solution status={status}/>}

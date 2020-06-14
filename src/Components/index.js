@@ -13,6 +13,6 @@ export { default as Question } from './Question';
 export { default as Solution } from './Solution';
 export { default as UserInfo } from './UserInfo';
 export { default as Welcome } from './Welcome';
-export { default as Help } from './Help';
+export { default as Reward } from './Reward';
 export { default as GetCoursesContainer } from './GetCoursesContainer';
 export { default as CompletedCoursesContainer } from './CompletedCoursesContainer';

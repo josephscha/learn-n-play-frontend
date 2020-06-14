@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Help = props => {
+const Reward = props => {
     
     console.log("Help component" , props)
     return (
         <div className="container acenter">
-                <h1>Help Component Under Construction</h1>
+                <h1>Rewards page for children to redeem rewards with points!</h1>
             </div>
     )
 }
-  
-export default Help;
+
+export default Reward;
