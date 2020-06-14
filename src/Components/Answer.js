@@ -39,18 +39,44 @@ handleTimer = () => {
 handleClick = () => {
     this.props.nextQuestion()
     this.setState({input: ""})
+    document.getElementsByClassName("right")[0].style.opacity="0"
+    document.getElementsByClassName("wrong")[0].style.opacity="0"
+
+
 }
 
 handleChange = (event) => {
     this.setState({input: event.target.value})
 }
 
+// checkAnswer = (event) => {
+//     event.preventDefault()
+//     if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")
+//         {this.props.answerHandler("WRONG")}
+//     if (this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")
+//         {this.props.answerHandler("CORRECT")}
+// }
 checkAnswer = (event) => {
     event.preventDefault()
     if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")
-        {this.props.answerHandler("WRONG")}
+        this.props.answerHandler("WRONG")
+        
+        if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")//new
+        document.getElementsByClassName("wrong")[0].style.opacity="1"
+        if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")
+        document.getElementsByClassName("right")[0].style.opacity="0"
+
+
+        if(this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")//new
+        document.getElementsByClassName("right")[0].style.opacity="1"
+        if(this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")//new
+        document.getElementsByClassName("wrong")[0].style.opacity="0"
+
+
+        
     if (this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")
-        {this.props.answerHandler("CORRECT")}
+        this.props.answerHandler("CORRECT")
+
 }
     render(){
         let type = this.props.type
@@ -67,13 +93,21 @@ checkAnswer = (event) => {
         }
         return (
             <>
+            {/* {   this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG"? */}
+            <img className="wrong" src={require("../images/wrong.png")}/>
+            {/* : */}
+            {/* this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT"? */}
+            <img className="right" src={require("../images/correct.png")}/>
+            {/* } */}
+            
+            
             {type === "ReadingProblem" ? 
                 <div>
                     <button onClick={handleTimer}>START 3 SECOND TIMER</button>
                     <h1>Timer: {count}</h1>
                     <h3>Text comes out under here</h3>
                     <h2>{input}</h2>
-                    {status === "CORRECT" ? <button onClick={handleClick}>Next Question</button> : null}
+                    {status === "CORRECT" ?  <button onClick={handleClick}>Next Question</button> : null}
                 </div>
             :
                 <div>
