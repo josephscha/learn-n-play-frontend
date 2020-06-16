@@ -409,6 +409,29 @@ h1.question {
   top:25px;
   left: 10%;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+
 .group-form input[type="text"],
 .group-form input[type="number"],
 .group-form input[type="password"],.confirm,.search{
@@ -431,7 +454,6 @@ h1.question {
   position: relative;
   left: 30%;
   top:-2em
-
 }
 
 select{
@@ -444,6 +466,10 @@ select{
 .book{
   position: relative;
   top: -5em;
+}
+
+.book:hover {
+  animation: bounce 1.0s infinite;
 }
 
 .btn {

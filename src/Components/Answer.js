@@ -41,8 +41,6 @@ handleClick = () => {
     this.setState({input: ""})
     document.getElementsByClassName("right")[0].style.opacity="0"
     document.getElementsByClassName("wrong")[0].style.opacity="0"
-
-
 }
 
 handleChange = (event) => {
@@ -60,23 +58,16 @@ checkAnswer = (event) => {
     event.preventDefault()
     if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")
         this.props.answerHandler("WRONG")
-        
         if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")//new
         document.getElementsByClassName("wrong")[0].style.opacity="1"
         if (this.state.input !== "" && this.state.input !== this.props.answer && this.props.status !== "WRONG")
         document.getElementsByClassName("right")[0].style.opacity="0"
-
-
         if(this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")//new
         document.getElementsByClassName("right")[0].style.opacity="1"
         if(this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")//new
         document.getElementsByClassName("wrong")[0].style.opacity="0"
-
-
-        
     if (this.state.input !== "" && this.state.input === this.props.answer && this.props.status !== "CORRECT")
         this.props.answerHandler("CORRECT")
-
 }
 
     render(){
@@ -95,18 +86,14 @@ checkAnswer = (event) => {
         if (input !== "" && input !== answer && status !== "WRONG")//neww
         document.getElementsByClassName("right")[0].style.opacity="0"
 
-
-
         if (input !== "" && input === answer && status !== "CORRECT")
         {answerHandler("CORRECT")}
 
         if (input !== "" && input === answer && status !== "CORRECT")//neww
         document.getElementsByClassName("wrong")[0].style.opacity="0"
 
-
         if (input !== "" && input === answer && status !== "CORRECT")//newww
         document.getElementsByClassName("right")[0].style.opacity="1"
-
 
         }
         return (
@@ -123,7 +110,7 @@ checkAnswer = (event) => {
                 <div>
                     <button className="r-btn" onClick={handleTimer}>START 3 SECOND TIMER</button>
                     <h1>Timer: {count}</h1>
-                    <h3>Text comes out under here</h3>
+                    <h3>You said:</h3>
                     <h2>{input}</h2>
                     {status === "CORRECT" ?  <button className="next" onClick={handleClick}>Next Question</button> : null}
                 </div>

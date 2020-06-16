@@ -22,7 +22,7 @@ class Login extends Component {
                 <div className="form-control">
                 <input autoComplete="new-off"type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
                 </div>
-                <button className="btn" type="submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
+                <button className="btn" type="submit" onClick={(e) => this.handleSubmit(e)}>Login</button>
             </form>
         )
     }
@@ -47,7 +47,7 @@ class Login extends Component {
                 <div className="form-control">
                 <input name="childName" placeholder="Child's Name" value={childName} onChange={this.handleChange}/>
                 </div>
-                <button className="btn" onClick={(e) => this.createUser(e)}>Submit</button>
+                <button className="btn" onClick={(e) => this.createUser(e)}>Register</button>
             </form> 
         )
     }
@@ -91,6 +91,7 @@ class Login extends Component {
         const images = ["./navigation/elephant.png", "./navigation/seaotter.png","./navigation/robot.png", "./navigation/piggy.png","./navigation/tiger.png",]
             document.querySelector("#loginimg1").src = images[Math.floor(Math.random() * images.length)];
     }
+    
     changeImage2 = () => {
         const images = ["./navigation/elephant.png", "./navigation/seaotter.png","./navigation/robot.png", "./navigation/piggy.png","./navigation/tiger.png",]
             document.querySelector("#loginimg2").src = images[Math.floor(Math.random() * images.length)];
@@ -111,8 +112,8 @@ class Login extends Component {
                 : 
                 <div className="container acenter">
                 {this.renderLogin() }
-
-                <button className="btn2" onClick={() => this.setState({isNewUser: true})}>Click here to SignUp</button>
+                
+                <button className="btn2" onClick={() => this.setState({isNewUser: true})}>Register</button>
 
                 </div>
                 }

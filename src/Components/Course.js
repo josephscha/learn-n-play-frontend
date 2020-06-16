@@ -39,7 +39,7 @@ class Course extends Component {
         </div>
            
           </div>
-            <button className="btn-c"  onClick={this.addCourse}>Add course to my Courses</button>
+            <button className="btn-c"  onClick={this.addCourse}>Add Course</button>
         
           </div>
         )
@@ -55,7 +55,7 @@ class Course extends Component {
         </div>
         </div>
            
-            <button className="btn-c" onClick={() => this.removeCourse(this.props.id)}>Remove from my Courses</button>
+            <button className="btn-c" onClick={() => this.removeCourse(this.props.id)}>Remove</button>
         </div>
 
         )

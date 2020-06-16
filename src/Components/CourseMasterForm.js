@@ -4,12 +4,21 @@ import CourseFormLevel2 from './CourseFormLevel2'
 
 const CourseMasterForm = (props) => {
 
-    const {status, confirmCourse, changeHandler, type, addToQuestions, problem, answer, image, createCourse} = props;
+    const {course, questions, removeProblem,status, confirmCourse, changeHandler, type, addToQuestions, problem, answer, image, createCourse} = props;
     return (
         <div>
             {!status ?
             <CourseFormLevel1 confirmCourse={confirmCourse} changeHandler={changeHandler}/> //course create form
             :
+            <>
+            <h1> {course.title} </h1>
+            <ol>
+                {questions.map(question => 
+                <>
+                <li> Problem: {question.problem} Answer: {question.answer}</li>
+                <button className="r-btn remove" onClick={() => removeProblem(question.problem)}>Remove Problem</button><br/>
+                </>)}
+            </ol>
             <CourseFormLevel2 addToQuestions={addToQuestions} 
             type={type} 
             changeHandler={changeHandler}
@@ -17,6 +26,7 @@ const CourseMasterForm = (props) => {
             problem={problem}
             answer={answer}
             image={image}/>  
+            </>
             }
         </div>
     )

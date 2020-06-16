@@ -16,7 +16,7 @@ class Profile extends React.Component {
 
     clickConfirm = () => {
         this.state.password_change === this.state.password_digest ? 
-        this.setState({edit: true}) 
+        this.setState({edit: true, password_change: ""}) 
         : 
         alert("Username & Password combination does not match. Please try again.")
         this.setState({editConfirm: false, password_change: ""})
@@ -46,7 +46,7 @@ class Profile extends React.Component {
     }
 
     changeHandler = (event) => {
-        let name = event.target.name
+        const name = event.target.name
         this.setState({[name]: event.target.value})
     }
 
@@ -66,23 +66,24 @@ class Profile extends React.Component {
     renderEditConfirm = () => {
         return (
             <form className="group-form" onChange={event => this.changeHandler(event)}>
-                <h1>Confirm your username & password</h1>
+                <h1>Confirm your username and password</h1>
+                <label htmlFor="username">Username:</label>
                 <input type="text" name="username" defaultValue={this.state.username} />
-                <input type="password" name="password_change" defaultValue={this.state.password_change} />
+                <label htmlFor="password_change">Password:</label>
+                <input type="password" name="password_change"/>
                 <button className="r-btn" onClick={this.clickConfirm}>Confirm</button>
-                
             </form>
         )
     }
 
     render() {
-        // console.log("profile page", this.state)
+        console.log("profile page", this.state)
         return(
             <div>
-                <center><h1>Profile page for {this.props.currentUser.username}</h1>
+                <center><h1>{this.props.currentUser.username}'s Profile</h1>
                 <div>
-                    
-                    <UserInfo {...this.props.currentUser}/>
+                    {this.state.editConfirm || this.state.edit ? null :
+                    <UserInfo {...this.props.currentUser}/>}
                     {!this.state.editConfirm && !this.state.edit ? <button className="r-btn" onClick={this.clickEditConfirm}>Edit Profile</button> : null}
                 </div>
                     <div>

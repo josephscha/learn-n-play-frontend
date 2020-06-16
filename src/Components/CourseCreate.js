@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { DirectUpload } from 'activestorage';
 import CourseMasterForm from './CourseMasterForm'
+import { Redirect  } from 'react-router-dom';
 const header = {
     accept: 'application/json',
     'content-type': 'application/json'
@@ -9,6 +10,7 @@ const header = {
 class CourseCreate extends Component {
 
     state = {
+        form: false,
         status: false, // when true, it'll render the 2nd layer to the form. 
         course: {}, // Holds the course object that is returned after it is created via fetch post
         difficulty: "", // used with title,description and points to create course object
@@ -83,7 +85,7 @@ class CourseCreate extends Component {
 
     removeProblem = (problem) => {
         this.setState({questions: this.state.questions.filter(question => question.problem !== problem)})
-    }
+    } 
 
     createCourse = () => {
         fetch("http://localhost:3000/courses", {
@@ -124,6 +126,7 @@ class CourseCreate extends Component {
                 }
             }
         )
+        this.setState({status:false, form:false})
     }
 
     createCourseProblems = (course_id, problem_id) => {
@@ -134,21 +137,27 @@ class CourseCreate extends Component {
         }).then(resp => resp.json()).then(data => console.log("created course problem", data) )
     }
 
+    toggleForm = () => {
+        this.setState({form: !this.state.form})
+    }
+
     render() {
-        const {changeHandler, confirmCourse, addToQuestions, removeProblem, createCourse} = this;
-        const {status,questions,type,problem,answer,image, course} = this.state;
+        const {changeHandler, confirmCourse, addToQuestions, removeProblem, createCourse, toggleForm} = this;
+        const {status,questions,type,problem,answer,image, course, form} = this.state;
         console.log("Create Course state", this.state)
         return(
             <div className="container acenter">
-                <h1> {course.title} </h1>
-                    <ol>
-                        {questions.map(question => 
-                        <>
-                        <li> Problem: {question.problem} Answer: {question.answer}</li>
-                        <button className="r-btn remove" onClick={() => removeProblem(question.problem)}>Remove Problem</button><br/>
-                        </>)}
-                    </ol>
-                <CourseMasterForm type={type} 
+                {!form ?
+                <>
+                    <h1> Click to create a course!</h1>    
+                    <img onClick={toggleForm} className="book" src={require("../images/book.png")}/>
+                </>
+                :
+                <CourseMasterForm 
+                questions={questions}
+                removeProblem={removeProblem}
+                course={course}
+                type={type} 
                 addToQuestions={addToQuestions}
                 confirmCourse={confirmCourse} 
                 changeHandler={changeHandler} 
@@ -158,6 +167,7 @@ class CourseCreate extends Component {
                 answer={answer}
                 image={image}
                 />
+                }
             </div>
         )
     }

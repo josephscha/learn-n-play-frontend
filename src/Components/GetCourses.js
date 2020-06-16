@@ -69,31 +69,32 @@ searchHandler = (event) => {
         let filteredCourses = courses.filter(course => course.title.toLowerCase().includes(this.state.input.toLowerCase()))
         // console.log("getCourses", this.state)
         return(
-            confirm ? 
+            <div>
+            {confirm ? 
             <div  className="scroll">
-                <center><h1>Get Courses page</h1>
+                <center>
                 <div className="container ">
                     <h1 className="my-c">My Courses</h1>
                     <CoursesContainer remove={true} removeFromMyCourses={removeFromMyCourses} userCourses={userCourses} myCourses={myCourses} currentUser={currentUser}/>
                 </div>
                 <div  className="scroll2">
                 <div className="container">
+                <center>
+                </center>
                     <h1 className="a-c">Available Courses</h1>
+                    <input className="search" type="text" placeholder="Search available courses"value={input} onChange={(event) => searchHandler(event)}/>
                     <GetCoursesContainer userCourses={userCourses} myCourses={myCourses} addToMyCourses={addToMyCourses} courses={filteredCourses} currentUser={currentUser}/>
                 </div>
                 </div>
                 </center>
-                <center>
-                    <input  className="search"type="text" placeholder="Search available courses"value={input} onChange={(event) => searchHandler(event)}/>
-                </center>
             </div>
             :
-            <center>
+                <center>
                 <h1>Please confirm your password</h1>
                 {this.renderConfirmPage()}
                 <Link to="/mycourses"><img className="image500 greendino" src="./navigation/greendino.png" alt="greendino"/></Link>
-                </center>
-            
+                </center>}
+            </div>
         )
     }
 }

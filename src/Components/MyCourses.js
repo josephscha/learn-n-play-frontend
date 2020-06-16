@@ -24,7 +24,7 @@ setMyCourses = () => {
         console.log(this.state)
         return(
             <>
-            <center><h1>My courses page/Course selection page</h1></center>
+            <center><h1>My courses!</h1></center>
                 <div className="container acenter">
                     
                     <CoursesContainer userCourses={userCourses} myCourses={myCourses} currentUser={currentUser}/>

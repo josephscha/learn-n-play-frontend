@@ -5,8 +5,7 @@ class CourseFormLevel1 extends React.Component {
     render() {
         return (
             <div>
-                <h1> Create a Course!</h1>
-                <img className="book" src={require("../images/book.png")}/>
+                <h1>Create a Course!</h1>
                 <form className="group-form" onChange={this.props.changeHandler}>
                     <label htmlFor="title">Course Title:</label>
                     <input autoFocus={true} type="text" name="title" value={this.props.title}/>
