@@ -58,7 +58,7 @@ class Profile extends React.Component {
                 <input type="password" name="password_change" defaultValue={this.state.password_change} placeholder="New password here"/>
                 <input type="text" name="email" defaultValue={this.state.email} />
                 <input type="text" name="child_name" defaultValue={this.state.child_name} />
-                <button className="r-btn" onClick={this.clickRenderEditForm}>Confirm</button>
+                <button className="s-btn" onClick={this.clickRenderEditForm}>Confirm</button>
             </form>
         )
     }
@@ -71,7 +71,7 @@ class Profile extends React.Component {
                 <input type="text" name="username" defaultValue={this.state.username} />
                 <label htmlFor="password_change">Password:</label>
                 <input type="password" name="password_change"/>
-                <button className="r-btn" onClick={this.clickConfirm}>Confirm</button>
+                <button className="s-btn" onClick={this.clickConfirm}>Confirm</button>
             </form>
         )
     }
@@ -84,7 +84,7 @@ class Profile extends React.Component {
                 <div>
                     {this.state.editConfirm || this.state.edit ? null :
                     <UserInfo {...this.props.currentUser}/>}
-                    {!this.state.editConfirm && !this.state.edit ? <button className="r-btn" onClick={this.clickEditConfirm}>Edit Profile</button> : null}
+                    {!this.state.editConfirm && !this.state.edit ? <button className="s-btn" onClick={this.clickEditConfirm}>Edit Profile</button> : null}
                 </div>
                     <div>
                         {this.state.editConfirm ? 
@@ -93,6 +93,7 @@ class Profile extends React.Component {
                         this.renderEditForm() : null}
                     </div>
                 </center>
+                <img className="image500 greendino" src="./navigation/polarbear.gif" alt="polarbear"/>
             </div>
         )
     }

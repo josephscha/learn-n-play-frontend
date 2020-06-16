@@ -42,8 +42,51 @@ body {
 
 }
 
-.greendino:hover,.bluedino:hover {
+.createcourse {
+  /* margin-top: 50px; */
+  position: absolute;
+  left:5%;
+  top:33%;
+}
+
+.greendino:hover,.bluedino:hover,.createcourse:hover {
   animation: bounce 1.0s infinite;
+}
+
+.orange {
+  height: 200px;
+  width: auto;
+  margin-bottom: 40px;
+  position: absolute;
+  right: 10em;
+  bottom:13%;
+}
+
+.thankyou {
+  height: 200px;
+  width: auto;
+  margin-bottom: 40px;
+  position: absolute;
+  left: 0;
+  bottom: -48px;
+}
+
+.eating {
+  height: 250px;
+  width: auto;
+  margin-bottom: 40px;
+  position: absolute;
+  left: 9em;
+  bottom:11%;
+}
+
+.sun {
+  height: 250px;
+  width: auto;
+  margin-bottom: 40px;
+  position: absolute;
+  left: 3em;
+  top:8%;
 }
 
 @keyframes bounce {
@@ -65,7 +108,6 @@ h1.question {
   position: absolute;
   right:0;
   bottom:11%;
-
 }
 
 .container {
@@ -78,7 +120,7 @@ h1.question {
   width: fit-content;
   height: fit-content;
 }
-
+ 
 .container2 {
   position: relative;
   text-align: center;
@@ -91,6 +133,92 @@ h1.question {
   background-color: rgb(51, 162, 190, .5);
   padding: 40px;
 }
+
+.container3 {
+  margin-top: 130px;
+  margin-left: 250px;
+  padding-top: 20px;
+  position: absolute;
+  top: 5px; left: 0; bottom: 0; right: 150px;
+  height: 600px;
+  overflow: scroll;
+  /* position: relative; */
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  color: white; 
+  /* border: 2px solid black; */
+  width: fit-content;
+  min-width: 559px;
+  /* margin-bottom: 20px; */
+  /* height: fit-content; */
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 25px;
+}
+
+.container4 {
+  height: 350px;
+  overflow: scroll;
+  position: relative;
+  /* text-align: center; */
+  align-content: center;
+  justify-content: center;
+  color: white;
+  /* border: 2px solid black; */
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 690px;
+  margin-top: 15px;
+  margin-left: -700px;
+  /* height: fit-content; */
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 25px;
+}
+
+.container5 {
+  height: 700px;
+  overflow: scroll;
+  position: absolute;
+  /* text-align: center; */
+  align-content: center;
+  justify-content: center;
+  color: white;
+  /* border: 2px solid black; */
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 20px;
+  margin-left: 720px;
+  margin-top: -350px;
+  /* height: fit-content; */
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 25px;
+}
+
+.container6 {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 800px;
+}
+
+.container7 {
+  height: 550px;
+  overflow: scroll;
+  position: absolute;
+  /* text-align: center; */
+  align-content: center;
+  justify-content: center;
+  color: white;
+  /* border: 2px solid black; */
+  /* margin-bottom: 20px; */
+  margin-left: 150px;
+  width: 500px;
+  /* max-width: 500px; */
+  margin-top: 50px;
+  /* height: fit-content; */
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 25px;
+}
+
 
 .questioncontainer {
   position: relative;
@@ -129,7 +257,40 @@ h1.question {
 }
 .title,.font{
   font-family:'Titan One',cursive;
-  color:white
+  color:white;
+}
+
+.popup {
+  animation: popup 1.3s 2;
+}
+
+@keyframes popup {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.4);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  70%{
+    transform: scale(1.2);
+  }
+  80%{
+    transform: scale(1);
+  }
+  90%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.top {
+  position: relative;
+  margin-bottom: -60px;
 }
 /* .title:before{
 	background:linear-gradient(45deg,#fc5c7d,#6a82fb,#fc5c7d);
@@ -247,22 +408,22 @@ h1.question {
 }
 
 
-#loginimg1 {
+#img1 {
   position: fixed;
   height: 350px;
   width: auto;
   margin-top: 18em;
-  margin-left: 4em;
-  animation: bounce2 2.0s infinite;
+  margin-left: 6em;
+  animation: bounce 2.0s infinite;
 }
 
-#loginimg2{
+#img2{
   position: fixed;
   height: 350px;
   width: auto;
-  right: 4em;
-  margin-top: 18em;
-  animation: bounce2 2.0s infinite;
+  right: 0;
+  margin-top: 5em;
+  animation: bounce 2.0s infinite;
 }
 
 @keyframes bounce2 {
@@ -283,6 +444,16 @@ h1.question {
   max-height: 500px;
   max-width: 500px;
   margin-top: 10%;
+}
+
+.dance {
+  position: absolute;
+  transform: translateX(60px)translateY(30px);
+}
+
+.okay {
+  position: absolute;
+  transform: translateX(1015px)translateY(375px);
 }
 
 
@@ -452,8 +623,9 @@ h1.question {
 /* body { position: absolute; } */
 .r-btn.remove{
   position: relative;
-  left: 30%;
-  top:-2em
+  left: 0;
+  top:-2px;
+  margin-bottom: 2px;
 }
 
 select{
@@ -591,6 +763,12 @@ color: white;
 
 } */
 
+.courses-container {
+  position: relative;
+  margin: auto auto;
+  margin-right: -150px;
+  margin-left: 19px;
+}
 
 .course {
 	background-color: rgba(255, 255, 255, 0.164);
@@ -624,11 +802,36 @@ color: white;
 	font-size: 16px;
 	padding: 12px 25px;
 	position: absolute;
-	right: 220px;
+	right: 150px;
+  letter-spacing: 1px;
+  margin-top: -11%;
+}
+.f-btn{
+  background-color: rgb(49, 177, 172);
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+  left: 327px;
+  top: 850px;
   letter-spacing: 1px;
   margin-top: -11%;
 }
 .r-btn{
+  position: relative;
+  background-color: rgb(49, 177, 172);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 10px;
+  padding: 5px 12px;
+  border: 0;
+top:10px;
+  border-radius: 50px;
+}
+.s-btn{
   position: relative;
   background-color: rgb(49, 177, 172);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -638,8 +841,6 @@ color: white;
   border: 0;
 top:10px;
   border-radius: 50px;
-
-
 }
 /* correct or wrong character */
 .right{
@@ -674,6 +875,8 @@ opacity: 0;
   position: relative;
   border:solid transparent;
   width: 30%;
+  padding-right: 22px;
+  padding-top: 19px;
   height: auto;
   color: white;
   border-radius: 10%;
@@ -731,24 +934,40 @@ opacity: 0;
   top:1.5em
 } */
 .search{
-  position: fixed;
-   bottom:30em;
-  left:1% ;
-  
-
+  position: relative;
+   /* bottom:15em; */
+  /* left:5% ; */
 }
 .next{
-  border-top: transparent;
+  /* border-top: transparent;
   border-left: transparent;
   border-right: transparent;
   background-color: transparent;
-  border-bottom-color: white;
+  border-bottom-color: white; */
+  position: relative;
+  background-color: rgba(1, 154, 255, 0.61);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+  padding: 12px 25px;
+  border: 0;
+  top:10px;
+  border-radius: 50px;
 }
 /* .a-c{
   position: relative;
   left:-6em;
-} */
+}  */
 
+.my-c-text {
+  position: absolute;
+  margin-left: 440px;
+}
+
+/* 
+This is disgusting. 
+TO-DO 
+Split up css files & clean up code */
 
 
 

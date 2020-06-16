@@ -47,12 +47,16 @@ class CourseEnd extends React.Component{
         const currentCourse = this.props.courses.find(course => course.id === this.props.location.state.courseId.id)
         return (
             this.state.click ? <Redirect to="/profile"/> :
-            <div className="container acenter">
-                <h1> Good job! </h1>
-                <h1> You finished {currentCourse.title}</h1>
-                <h1>You got {currentCourse.points} points!</h1>
-                <button className="button1" onClick={ () => this.addPoints() } >Click here to collect your points!</button>
-            </div>
+            <>
+                <div className="container acenter">
+                    <h1> Good job! </h1>
+                    <h1> You finished {currentCourse.title}</h1>
+                    <h1>You got {currentCourse.points} points!</h1>
+                    <button className="button1" onClick={ () => this.addPoints() } >Click here to collect your points!</button>
+                </div>
+                <img className="dance" src="./navigation/ohyeah.gif" alt="dancing cat"/>
+                <img className="okay" src="./navigation/okay.gif" alt="okay cat"/>
+            </>
         )
     }
 }

@@ -97,6 +97,8 @@ answerHandler = (answer) => {
             }
                 {status === "NA" ? null : <Solution status={status}/>}
             </div>
+            <img src="./navigation/seaotter.png" id="img1"/> 
+            <img src="./navigation/robot.png" id="img2"/> 
             </div>
         )
     }

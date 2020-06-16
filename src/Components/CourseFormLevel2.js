@@ -4,7 +4,7 @@ import ReadingSpellingForm from './ReadingSpellingForm'
 
 const CourseFormLevel2 = props => {
 
-    const {addToQuestions, changeHandler, problem, answer, image, createCourse, type} = props;
+    const {addToQuestions, changeHandler, problem, answer, image, type} = props;
         return (
             <div>
                 <h1>Create your problems!</h1>
@@ -15,7 +15,7 @@ const CourseFormLevel2 = props => {
                 problem={problem}
                 answer={answer}
                 /> 
-                <button className="r-btn" onClick={createCourse}>FINISHED!</button>
+
                 </>
                 : 
                 <>
@@ -27,7 +27,7 @@ const CourseFormLevel2 = props => {
                 image={image}
                 type={type}
                 />
-                <button className="r-btn" onClick={createCourse}>FINISHED!</button>
+
                 </>}
             </div>
         )

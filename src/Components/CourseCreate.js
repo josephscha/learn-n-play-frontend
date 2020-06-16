@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DirectUpload } from 'activestorage';
 import CourseMasterForm from './CourseMasterForm'
-import { Redirect  } from 'react-router-dom';
+
 const header = {
     accept: 'application/json',
     'content-type': 'application/json'
@@ -146,29 +146,34 @@ class CourseCreate extends Component {
         const {status,questions,type,problem,answer,image, course, form} = this.state;
         console.log("Create Course state", this.state)
         return(
-            <div className="container acenter">
+            <>
                 {!form ?
                 <>
-                    <h1> Click to create a course!</h1>    
-                    <img onClick={toggleForm} className="book" src={require("../images/book.png")}/>
+                    <div className="container acenter">
+                        <h1> Click to create a course!</h1>    
+                        <img onClick={toggleForm} className="book" src={require("../images/book.png")}/>
+                    </div>
+                    <img className="thankyou" src="./navigation/thankyou.gif" alt="thankyou cat"/>
                 </>
                 :
-                <CourseMasterForm 
-                questions={questions}
-                removeProblem={removeProblem}
-                course={course}
-                type={type} 
-                addToQuestions={addToQuestions}
-                confirmCourse={confirmCourse} 
-                changeHandler={changeHandler} 
-                createCourse={createCourse}
-                status={status}
-                problem={problem}
-                answer={answer}
-                image={image}
-                />
+                <div>
+                    <CourseMasterForm 
+                    questions={questions}
+                    removeProblem={removeProblem}
+                    course={course}
+                    type={type} 
+                    addToQuestions={addToQuestions}
+                    confirmCourse={confirmCourse} 
+                    changeHandler={changeHandler} 
+                    createCourse={createCourse}
+                    status={status}
+                    problem={problem}
+                    answer={answer}
+                    image={image}
+                    />
+                </div>
                 }
-            </div>
+            </>
         )
     }
 }

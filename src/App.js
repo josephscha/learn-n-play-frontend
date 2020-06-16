@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 // import {connect} from 'react-redux'
 // import {fetchCreator} from './Components/reducer'
+import { Redirect  } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 import {Navbar, Reward, Login, MyCourses, GetCourses, Profile, Welcome, CourseStart, CourseEnd, CourseCreate} from './Components'
 
@@ -10,7 +11,8 @@ export default class App extends React.Component  {
   state = {
     currentUser: null,
     users: [],
-    courses: []
+    courses: [],
+    darkmode: false
   }
 
   componentDidMount() {
@@ -29,6 +31,9 @@ export default class App extends React.Component  {
     this.setState({currentUser: user})
   }
 
+  toggleDarkmode = () => {
+    this.setState({darkmode: !this.state.darkmode})
+  }
   // fetchQuestions = (type) => {
   //   let search = ""
   //   switch(type){
@@ -65,6 +70,7 @@ export default class App extends React.Component  {
       <div>
         {/* <img id="background" src="https://i.ya-webdesign.com/images/green-chalkboard-png-2.png" alt="background img"/> */}
       {this.state.currentUser ? <Navbar setCurrentUser={setCurrentUser}/> : null}
+      {this.state.currentUser !== null ? <Redirect to="/welcome"/> : <Redirect to="/"/>}
          <Switch>
            <Route path ="/profile" render={(props) => <Profile {...props} setCurrentUser={setCurrentUser} currentUser={currentUser} courses={courses}/> }/>
            <Route path ="/mycourses" render={(props) => <MyCourses {...props} currentUser={currentUser} courses={courses}/> }/>

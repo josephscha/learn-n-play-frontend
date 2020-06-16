@@ -5,7 +5,7 @@ class CourseFormLevel1 extends React.Component {
     render() {
         return (
             <div>
-                <h1>Create a Course!</h1>
+                <center><h1>Create a Course!</h1></center>
                 <form className="group-form" onChange={this.props.changeHandler}>
                     <label htmlFor="title">Course Title:</label>
                     <input autoFocus={true} type="text" name="title" value={this.props.title}/>
@@ -27,7 +27,7 @@ class CourseFormLevel1 extends React.Component {
                         <option value="SpellingProblem">Spelling</option>
                         <option value="MathProblem">Math</option>
                     </select>
-                    <input className="r-btn" type="submit" value="Submit" onClick={(event)=> this.props.confirmCourse(event)}/>
+                    <input className="s-btn" type="submit" value="Submit" onClick={(event)=> this.props.confirmCourse(event)}/>
                 </form> 
             </div>
         )

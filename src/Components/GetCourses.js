@@ -28,7 +28,7 @@ renderConfirmPage = () => {
         return (
             <form className="group-form" onChange={this.changeHandler}>
                 <input className="confirm"type="password" name="password_check" value={this.state.password_check} placeholder="Confirm password"/>
-                <button className="r-btn" onClick={event => this.clickConfirm(event)}>Confirm</button>
+                <button className="s-btn" onClick={event => this.clickConfirm(event)}>Confirm</button>
             </form>
         )
 }
@@ -71,25 +71,24 @@ searchHandler = (event) => {
         return(
             <div>
             {confirm ? 
-            <div  className="scroll">
+            <div>
                 <center>
-                <div className="container ">
+                <div className="container4">
                     <h1 className="my-c">My Courses</h1>
                     <CoursesContainer remove={true} removeFromMyCourses={removeFromMyCourses} userCourses={userCourses} myCourses={myCourses} currentUser={currentUser}/>
                 </div>
-                <div  className="scroll2">
-                <div className="container">
+                <div className="container5">
                 <center>
                 </center>
                     <h1 className="a-c">Available Courses</h1>
                     <input className="search" type="text" placeholder="Search available courses"value={input} onChange={(event) => searchHandler(event)}/>
                     <GetCoursesContainer userCourses={userCourses} myCourses={myCourses} addToMyCourses={addToMyCourses} courses={filteredCourses} currentUser={currentUser}/>
                 </div>
-                </div>
                 </center>
+                <Link to="/coursecreate"><img className="image500 createcourse" src="./navigation/createcourse.png" alt="createcourse"/></Link>
             </div>
             :
-                <center>
+            <center>
                 <h1>Please confirm your password</h1>
                 {this.renderConfirmPage()}
                 <Link to="/mycourses"><img className="image500 greendino" src="./navigation/greendino.png" alt="greendino"/></Link>

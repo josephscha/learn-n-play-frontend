@@ -117,8 +117,10 @@ class Login extends Component {
 
                 </div>
                 }
-                <img src="./navigation/seaotter.png" id="loginimg1" onClick={this.changeImage1}/>
-                <img src="./navigation/elephant.png" id="loginimg2" onClick={this.changeImage2}/>
+                {/* <img src="./navigation/seaotter.png" id="loginimg1" onClick={this.changeImage1}/> */}
+                <img src="./navigation/orange.gif" className="orange" alt="polarbear"/>
+                <img src="./navigation/eating.gif" className="eating" alt="eating"/>
+                <img src="./navigation/sun.gif" className="sun" alt="sun"/>
             </div>
         );
     }
