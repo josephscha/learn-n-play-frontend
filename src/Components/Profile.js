@@ -80,7 +80,7 @@ class Profile extends React.Component {
         console.log("profile page", this.state)
         return(
             <div>
-                <center><h1>{this.props.currentUser.username}'s Profile</h1>
+                <center><h1>{this.props.currentUser.child_name}'s Profile</h1>
                 <div>
                     {this.state.editConfirm || this.state.edit ? null :
                     <UserInfo {...this.props.currentUser}/>}

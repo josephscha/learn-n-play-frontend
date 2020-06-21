@@ -51,12 +51,17 @@ nextQuestion = () => {
       this.setState({finished: true})
     }
     this.setState({startIndex: newIndex, status:"NA"})
+    this.changeImage1()
 }
 
 answerHandler = (answer) => {
     this.setState({status: answer})
 }
 
+changeImage1 = () => {
+    const images = ["./navigation/seaotter.png","./navigation/robot.png", "./navigation/piggy.png","./navigation/tiger.png",]
+        document.querySelector("#img1").src = images[Math.floor(Math.random() * images.length)];
+}
 
 // nextQuestion = () => {
 //     if ((this.state.startIndex + 1) <= this.state.questions.length){
@@ -75,6 +80,7 @@ answerHandler = (answer) => {
         const {startIndex, finished, questions, status, type} = this.state;
         const {answerHandler, nextQuestion} = this;
         let currentQuestion = questions[startIndex];
+
         return(
             <div>  
                  {/*pencil bg  */}
@@ -97,8 +103,8 @@ answerHandler = (answer) => {
             }
                 {status === "NA" ? null : <Solution status={status}/>}
             </div>
-            <img src="./navigation/seaotter.png" id="img1"/> 
-            <img src="./navigation/robot.png" id="img2"/> 
+            {/* <img src="./navigation/seaotter.png" id="img1"/>  */}
+            <img src="./navigation/robot.png" id="img1"/> 
             </div>
         )
     }

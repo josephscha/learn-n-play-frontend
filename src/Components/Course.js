@@ -67,8 +67,9 @@ class Course extends Component {
 		<div className="course-preview">
                     {this.props.title} 
             </div>        
+            Description: {this.props.description}
                     <Link className="link" to={{pathname:'coursestart', courseId: {id: this.props.id}}}>Start Course</Link>
-                    Status: {this.isCompleted(this.props.id) ? "Completed" : "Not complete"}
+                    Status: {this.isCompleted(this.props.id) ? "Completed" : "Not Completed"}
                 </div>
                 </div>
                 )

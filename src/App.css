@@ -413,7 +413,7 @@ h1.question {
   height: 350px;
   width: auto;
   margin-top: 18em;
-  margin-left: 6em;
+  margin-left: 4em;
   animation: bounce 2.0s infinite;
 }
 
@@ -577,8 +577,14 @@ h1.question {
 }
 .link{
   position: relative;
-  top:25px;
-  left: 10%;
+    padding: 2px;
+    top: 25px;
+    left: 1%;
+    color: teal;
+    text-decoration: none;
+    border: 2px solid white;
+    margin-bottom: 55px;
+    border-radius: 25px;
 }
 
 .login-form {
@@ -766,6 +772,7 @@ color: white;
 .courses-container {
   position: relative;
   margin: auto auto;
+
   margin-right: -150px;
   margin-left: 19px;
 }
@@ -776,7 +783,8 @@ color: white;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
 	max-width: 70%;
-	margin: 20px;
+  margin: 20px;
+  align-items: center;
   /* overflow: auto; */
 	width: 650px;
 }

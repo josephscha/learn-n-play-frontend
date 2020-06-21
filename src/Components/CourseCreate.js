@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { DirectUpload } from 'activestorage';
 import CourseMasterForm from './CourseMasterForm'
-
 const header = {
     accept: 'application/json',
     'content-type': 'application/json'
@@ -79,7 +78,7 @@ class CourseCreate extends Component {
 
     addToQuestions = (event) => {
         event.preventDefault()
-        const questionObj = (this.state.type === "MathProblem") ? {problem: this.state.problem, answer: this.state.answer} : {problem: this.state.problem, answer: this.state.answer, image: this.state.image}
+        const questionObj = (this.state.type === "MathProblem") ? {problem: this.state.problem, answer: this.state.answer} :  {problem: this.state.problem, answer: this.state.answer, image: this.state.image}
         this.setState({questions: this.state.questions.concat(questionObj), problem: "", answer: "", image: {}})
     }
 
