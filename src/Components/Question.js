@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Question = props => {
-    
-    // console.log("question component" , props)
+
     const {image, type, problem} = props
     const mathQuestion = {
         fontSize: 150

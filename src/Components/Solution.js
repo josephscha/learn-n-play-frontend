@@ -2,7 +2,6 @@ import React from 'react';
 
 const Solution = props => {
     
-    // console.log("Solution component" , props)
     return (
         <div>
             {props.status === "CORRECT" ? 
