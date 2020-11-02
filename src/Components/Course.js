@@ -81,10 +81,8 @@ class Course extends Component {
     }
 
     render() {
-        // console.log("completed?", this.isCompleted(this.props.id))
         const {getCourse} = this.props
         const {renderGetCourse, renderRemoveCourse} = this;
-        // console.log("mycourse", getCourse)
         return(
             getCourse ? 
             renderGetCourse()
