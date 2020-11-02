@@ -17,8 +17,7 @@ state = {
 componentDidMount(){
     this.getQuestions()
 }
-// I have course_id's currently. Need to use course_id to go into course_problems & get all the course_problem objects that 
-// have the course_id. Than with each id, go to corresponding course_problems and pull out those questions
+
 getQuestions = () => {
     fetch("http://localhost:3000/course_problems")
     .then(resp => resp.json())
@@ -63,14 +62,6 @@ changeImage1 = () => {
         document.querySelector("#img1").src = images[Math.floor(Math.random() * images.length)];
 }
 
-// nextQuestion = () => {
-//     if ((this.state.startIndex + 1) <= this.state.questions.length){
-//     this.setState({startIndex: this.state.startIndex + 1})}
-//     else {
-//         this.setState({finished: true})
-//     }
-// }
-// question, answer, solution components
     render() {
         let pencils=require("../images/pencils.png")
         let div=[
@@ -83,7 +74,6 @@ changeImage1 = () => {
 
         return(
             <div>  
-                 {/*pencil bg  */}
                  {div.map(function(name, index){
                         return  <img  className={name}src={pencils}/>
                         ;
@@ -103,7 +93,6 @@ changeImage1 = () => {
             }
                 {status === "NA" ? null : <Solution status={status}/>}
             </div>
-            {/* <img src="./navigation/seaotter.png" id="img1"/>  */}
             <img src="./navigation/robot.png" id="img1"/> 
             </div>
         )
