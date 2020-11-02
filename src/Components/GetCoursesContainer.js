@@ -12,7 +12,6 @@ class GetCoursesContainer extends Component {
                  <Course key={course.id} {...course} myCourses={myCourses} userCourses={userCourses}
                  addToMyCourses={addToMyCourses} getCourse={true} currentUser={currentUser}/>)}
                  
-	{/* </div> */}
 </div>
         )
     }
