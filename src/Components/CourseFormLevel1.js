@@ -36,10 +36,3 @@ class CourseFormLevel1 extends React.Component {
   
 export default CourseFormLevel1;
 
-// 2.FORM LEVEL 1 - CREATE COURSE
-// -1st level - Create course - title-string, difficulty- string;dropdown(easy/medium/hard), 
-// description-string, points: integer
-// -Click confirm, brings up question form & sends post to courses. 
-// 3.FORM LEVEL 2 - CREATE PROBLEMS
-// Problem form LEVEL 1 
-// - drop down select; reading problem/ spelling problem/ math problem
