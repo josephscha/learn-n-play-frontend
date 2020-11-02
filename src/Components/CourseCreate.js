@@ -10,15 +10,15 @@ class CourseCreate extends Component {
 
     state = {
         form: false,
-        status: false, // when true, it'll render the 2nd layer to the form. 
-        course: {}, // Holds the course object that is returned after it is created via fetch post
-        difficulty: "", // used with title,description and points to create course object
+        status: false, 
+        course: {},
+        difficulty: "", 
         title: "",
         description: "",
         points: 0,
-        questions: [], // where questions get added to after fetch post to course_problems is made so it's rendered for user to see
+        questions: [],
         type: "",
-        problem: "", // used with answer & image to create problem object via fetch post 
+        problem: "", 
         answer: "", 
         image: {},
         courseId: 0,
